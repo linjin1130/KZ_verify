@@ -1,0 +1,24 @@
+# Output products list for <merge_fifo>
+_xmsgs\pn_parser.xmsgs
+fifo_generator_ug175.pdf
+fifo_generator_v8_3_readme.txt
+merge_fifo.asy
+merge_fifo.gise
+merge_fifo.ngc
+merge_fifo.sym
+merge_fifo.vhd
+merge_fifo.vho
+merge_fifo.xco
+merge_fifo.xise
+merge_fifo_flist.txt
+merge_fifo_ste\example_design\merge_fifo_top.ucf
+merge_fifo_ste\example_design\merge_fifo_top.vhd
+merge_fifo_ste\example_design\merge_fifo_top.xdc
+merge_fifo_ste\implement\implement.bat
+merge_fifo_ste\implement\implement.sh
+merge_fifo_ste\implement\planAhead_rdn.bat
+merge_fifo_ste\implement\planAhead_rdn.sh
+merge_fifo_ste\implement\planAhead_rdn.tcl
+merge_fifo_ste\implement\xst.prj
+merge_fifo_ste\implement\xst.scr
+merge_fifo_xmdf.tcl

@@ -1,0 +1,512 @@
+ 
+
+NET "fpga_cpld_burst_en" LOC = AD12;
+NET "cpld_fpga_clk" LOC = AE16;
+NET "cpld_fpga_addr[0]" LOC = AH18;
+NET "cpld_fpga_addr[1]" LOC = AG17;
+NET "cpld_fpga_addr[2]" LOC = AG18;
+NET "cpld_fpga_addr[3]" LOC = AK11;
+NET "cpld_fpga_addr[4]" LOC = AK12;
+NET "cpld_fpga_addr[5]" LOC = AJ10;
+NET "cpld_fpga_addr[6]" LOC = AG11;
+NET "cpld_fpga_addr[7]" LOC = AH9;
+#NET "cpld_fpga_addr[8]" LOC = AK9;
+#NET "cpld_fpga_addr[9]" LOC = AG10;
+#NET "cpld_fpga_addr[10]" LOC = AH13;
+#NET "cpld_fpga_addr[11]" LOC = AF11;
+#NET "cpld_fpga_addr[12]" LOC = AE14;
+#NET "cpld_fpga_addr[13]" LOC = AE13;
+#NET "cpld_fpga_addr[14]" LOC = AC14;
+#NET "cpld_fpga_addr[15]" LOC = AC13;
+#NET "cpld_fpga_addr[16]" LOC = AE17;
+#NET "cpld_fpga_addr[17]" LOC = AC17;
+NET "cpld_fpga_sglrd" LOC = AF13;
+NET "cpld_fpga_sglwr" LOC = AP12;
+NET "cpld_fpga_brtrd_req" LOC = AC12;
+NET "fpga_cpld_burst_act" LOC = AD11;
+
+
+#INST "*Chnl_1_inst*carrychain_plain_inst/*" LOC=SLICE_X19Y*;
+#INST "*Chnl_2_inst*carrychain_plain_inst/*" LOC=SLICE_X23Y*;
+#INST "*Chnl_3_inst*carrychain_plain_inst/*" LOC=SLICE_X27Y*;
+#INST "*Chnl_4_inst*carrychain_plain_inst/*" LOC=SLICE_X31Y*;
+#INST "*Chnl_5_inst*carrychain_plain_inst/*" LOC=SLICE_X35Y*;
+#INST "*Chnl_6_inst*carrychain_plain_inst/*" LOC=SLICE_X39Y*;
+#INST "*Chnl_7_inst*carrychain_plain_inst/*" LOC=SLICE_X43Y*;
+#INST "*Chnl_8_inst*carrychain_plain_inst/*" LOC=SLICE_X47Y*;
+#INST "*Chnl_9_inst*carrychain_plain_inst/*" LOC=SLICE_X51Y*;
+#INST "*Chnl_10_inst*carrychain_plain_inst/*" LOC=SLICE_X55Y*;
+#INST "*Chnl_11_inst*carrychain_plain_inst/*" LOC=SLICE_X59Y*;
+#INST "*Chnl_12_inst*carrychain_plain_inst/*" LOC=SLICE_X63Y*;
+#INST "*Chnl_13_inst*carrychain_plain_inst/*" LOC=SLICE_X67Y*;
+#INST "*Chnl_14_inst*carrychain_plain_inst/*" LOC=SLICE_X85Y*; 
+#INST "*Chnl_15_inst*carrychain_plain_inst/*" LOC=SLICE_X89Y*;
+#INST "*Chnl_16_inst*carrychain_plain_inst/*" LOC=SLICE_X93Y*;
+#INST "*SimuHitGene*CARRY4*" LOC=SLICE_X97Y*;
+#INST "Inst_SimuHitGene " KEEP = TRUE;
+INST "*SimuHitGene*" LOC=SLICE_X117Y*;
+#INST "hitin_bufg_inst[14].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
+#INST "hitin_bufg_inst[8].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
+NET "clk_40M_I" LOC = J9;
+NET "clk_40M_IB" LOC = H9;
+#NET "fpga_dac_addr[0]" LOC = AC34;
+#NET "fpga_dac_addr[1]" LOC = AD34;
+#NET "fpga_dac_addr[2]" LOC = AE34;
+#NET "fpga_dac_addr[3]" LOC = AH34;
+#NET "fpga_dac_cs_n" LOC = AN34;
+#NET "Inst_DAC_Ctrl/fpga_dac_data[0]" LOC = J34;
+#NET "Inst_DAC_Ctrl/fpga_dac_data[1]" LOC = K34;
+#NET "Inst_DAC_Ctrl/fpga_dac_data[2]" LOC = L34;
+#NET "Inst_DAC_Ctrl/fpga_dac_data[3]" LOC = N34;
+#NET "Inst_DAC_Ctrl/fpga_dac_data[4]" LOC = T29;
+#NET "Inst_DAC_Ctrl/fpga_dac_data[5]" LOC = R33;
+#NET "Inst_DAC_Ctrl/fpga_dac_data[6]" LOC = Y34;
+#NET "Inst_DAC_Ctrl/fpga_dac_data[7]" LOC = AA34;
+#NET "fpga_dac_en_n" LOC = AK34;
+#NET "fpga_dac_ld_n" LOC = AJ34;
+#NET "fpga_dac_rs_n" LOC = H34;
+#NET "fpga_dac_rw_n" LOC = AL34;
+##TP15
+#NET "Tp[0]" LOC = J11;
+###TP14
+#NET "Tp[1]" LOC = H12;
+###TP13
+#NET "Tp[2]" LOC = G12;
+##TP16
+#NET "Tp[3]" LOC = F13;
+###TP12
+#NET "Tp[4]" LOC = G13;
+###TP22
+#NET "Tp[5]" LOC = G10;
+###bottom
+###TP9
+#NET "Tp[6]" LOC = J14;
+###TP30
+#NET "Tp[7]" LOC = N30;
+##TP31
+#NET "Tp[8]" LOC = T33;
+
+#Created by Constraints Editor (xc6vlx240t-ff1156-2) - 2012/12/25
+NET "clk_40M_I" TNM_NET = "clk_40M_I";
+TIMESPEC TS_clk_40M_I = PERIOD "clk_40M_I" 6.25 ns HIGH 50 %;
+NET "clk_40M_IB" TNM_NET = "clk_40M_IB";
+TIMESPEC TS_clk_40M_IB = PERIOD "clk_40M_IB" 6.25 ns HIGH 50 %;
+#NET "clk_40M_I" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "fpga_cpld_rst_n" LOC = AD15;
+#NET "reset_in_n" LOC = B16;
+NET "cpld_fpga_clk" CLOCK_DEDICATED_ROUTE = FALSE;
+
+####### random chip interface #############
+#NET "Rnd_Gen_WNG_Clk[0]" LOC = T30;
+#NET "Rnd_Gen_WNG_Oe_n[0]" LOC = T31;
+#NET "Rnd_Gen_WNG_Data[0]" LOC = R33;
+#NET "Rnd_Gen_WNG_Data[1]" LOC = R34;
+#NET "Rnd_Gen_WNG_Data[2]" LOC = T33;
+#NET "Rnd_Gen_WNG_Data[3]" LOC = T34;
+
+################ monitor interface ################
+#INST "Inst_sysmonitor/sysmonitor_core_inst/SYSMON_INST" LOC = SYSMON_X0Y0;
+## 12V_V
+#NET "vauxp11" LOC = L33;
+## 12V_V
+#NET "vauxn11" LOC = M32;
+## 12V_I
+#NET "vauxp10" LOC = N27;
+## 12V_I
+#NET "vauxn10" LOC = P27;
+#
+## 5V_V
+#NET "vauxp9" LOC = M26;
+## 5V_V
+#NET "vauxn9" LOC = M27;
+## 5V_I
+#NET "vauxp8" LOC = K32;
+## 5V_I
+#NET "vauxn8" LOC = K31;
+#
+## 3.3V_V
+#NET "vauxp13" LOC = P25;
+## 3.3V_V
+#NET "vauxn13" LOC = P26;
+## 3.3V_I
+#NET "vauxp12" LOC = L28;
+## 3.3V_I
+#NET "vauxn12" LOC = M28;
+#
+## 1V_V
+#NET "vauxp15" LOC = R26;
+## 1V_V
+#NET "vauxn15" LOC = T26;
+## 1V_I
+#NET "vauxp14" LOC = R28;
+## 1V_I
+#NET "vauxn14" LOC = R27;
+#
+## 2.5V_V
+#NET "vauxp1" LOC = A13;
+## 2.5V_V
+#NET "vauxn1" LOC = A14;
+## 2.5V_I
+#NET "vauxp0" LOC = G11;
+## 2.5V_I
+#NET "vauxn0" LOC = F11;
+#
+#NET "vn_in" LOC = V17;
+#NET "vp_in" LOC = U18;
+
+############ FPGA CPLD interface ##############
+#Created by Constraints Editor (xc6vlx240t-ff1156-2) - 2013/09/18
+NET "cpld_fpga_clk" TNM_NET = "cpld_fpga_clk";
+TIMESPEC TS_cpld_fpga_clk = PERIOD "cpld_fpga_clk" 33 ns HIGH 50 %;
+#NET "fpga_dac_data[0]" OFFSET = IN 16.5 ns VALID 33 ns BEFORE "cpld_fpga_clk" RISING;
+INST "Inst_cpld_if/cpld_fpga_dio_o_0" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_1" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_2" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_3" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_4" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_5" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_6" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_7" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_8" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_9" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_10" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_11" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_12" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_13" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_14" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_15" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_16" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_17" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_18" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_19" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_20" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_21" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_22" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_23" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_24" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_25" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_26" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_27" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_28" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_29" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_30" IOB =TRUE;
+INST "Inst_cpld_if/cpld_fpga_dio_o_31" IOB =TRUE;
+
+NET "cpld_fpga_data[0]" LOC = AH15;
+NET "cpld_fpga_data[1]" LOC = AN17;
+NET "cpld_fpga_data[2]" LOC = AJ15;
+NET "cpld_fpga_data[3]" LOC = AP16;
+NET "cpld_fpga_data[4]" LOC = AM16;
+NET "cpld_fpga_data[5]" LOC = AP15;
+NET "cpld_fpga_data[6]" LOC = AM15;
+NET "cpld_fpga_data[7]" LOC = AN15;
+NET "cpld_fpga_data[8]" LOC = AK14;
+NET "cpld_fpga_data[9]" LOC = AP14;
+NET "cpld_fpga_data[10]" LOC = AN14;
+NET "cpld_fpga_data[11]" LOC = AL13;
+NET "cpld_fpga_data[12]" LOC = AM12;
+NET "cpld_fpga_data[13]" LOC = AN13;
+NET "cpld_fpga_data[14]" LOC = AN10;
+NET "cpld_fpga_data[15]" LOC = AN12;
+NET "cpld_fpga_data[16]" LOC = AK16;
+NET "cpld_fpga_data[17]" LOC = AM13;
+NET "cpld_fpga_data[18]" LOC = AJ17;
+NET "cpld_fpga_data[19]" LOC = AL15;
+NET "cpld_fpga_data[20]" LOC = AJ14;
+NET "cpld_fpga_data[21]" LOC = AP17;
+NET "cpld_fpga_data[22]" LOC = AH14;
+NET "cpld_fpga_data[23]" LOC = AF15;
+NET "cpld_fpga_data[24]" LOC = AK18;
+NET "cpld_fpga_data[25]" LOC = AJ19;
+NET "cpld_fpga_data[26]" LOC = AF18;
+NET "cpld_fpga_data[27]" LOC = AK13;
+NET "cpld_fpga_data[28]" LOC = AL11;
+NET "cpld_fpga_data[29]" LOC = AM11;
+NET "cpld_fpga_data[30]" LOC = AL14;
+NET "cpld_fpga_data[31]" LOC = AL10;
+
+#####   Alice   #########
+########
+#NET "GPS_pulse_in" LOC = Y33; ### J12 2
+#
+#NET "syn_light" LOC = V28;    ### J15 2
+#NET "chopper_ctrl" LOC = V27; ### J15 1
+
+######
+#NET "SERIAL_OUT_p[0]" LOC = U33;### J23  alice PM pecl
+#NET "SERIAL_OUT_n[0]" LOC = U32;### J24  alice PM necl
+#NET "SERIAL_OUT_p[1]" LOC = U28;### J25  alice AM pecl
+#NET "SERIAL_OUT_n[1]" LOC = V29;### J26  alice AM necl
+#NET "SERIAL_OUT_p[2]" LOC = U31;### J27  alice 500M clk
+#NET "SERIAL_OUT_n[2]" LOC = U30;### J28  alice 500M clk
+
+#NET "PPG_clock" LOC = U31;
+#NET "PPG_start" LOC = U30;
+
+##NET "apd_fpga_hit_p[0]" LOC = C28;#QLD3_LVDS1+ J9 1
+##NET "apd_fpga_hit_n[0]" LOC = B28;#QLD3_LVDS1- J9 2
+##NET "apd_fpga_hit_p[1]" LOC = C29;#QLD3_LVDS2+ J9 3
+##NET "apd_fpga_hit_n[1]" LOC = D29;#QLD3_LVDS2- J9 4
+##NET "apd_fpga_hit_p[2]" LOC = F33;#QLD4_LVDS1+ J9 5
+##NET "apd_fpga_hit_n[2]" LOC = G33;#QLD4_LVDS1- J9 6
+##NET "apd_fpga_hit_p[3]" LOC = J25;#QLD4_LVDS2+ J9 7
+##NET "apd_fpga_hit_n[3]" LOC = J24;#QLD4_LVDS2- J9 8
+#
+##########  end of Alice  #########
+#
+#
+#######  Bob  ##################
+#NET "POC_start[0]"		LOC = L15;### J8 1
+#NET "POC_stop[0]"		 	LOC = L14;### J8 2
+#NET "POC_start[1]"		LOC = K16;### J8 3
+#NET "POC_stop[1]"		 	LOC = L16;### J8 4
+#NET "POC_start[2]"		LOC = B20;### J8 5
+#NET "POC_stop[2]"		 	LOC = C19;### J8 6
+#NET "POC_start[3]"		LOC = F21;### J8 7
+#NET "POC_stop[3]"		 	LOC = G20;### J8 8
+#
+#NET "PPG_start"			LOC = H28;### J8 9
+#NET "PPG_clock"		 	LOC = H29;### J8 10
+#
+#NET "POC_start[4]"		LOC = N33;### J10 1
+#NET "POC_stop[4]"		 	LOC = M33;### J10 2
+#NET "POC_start[5]"		LOC = K26;### J10 3
+#NET "POC_stop[5]"		 	LOC = K27;### J10 4
+#NET "POC_start[6]"		LOC = V34;### J10 5
+#NET "POC_stop[6]"		 	LOC = W34;### J10 6
+#
+#NET "Dac_Csn" 				LOC = N28;	### J10 7
+#NET "Dac_Din" 				LOC = N29;   ### J10 8
+#NET "Dac_Sclk" 			LOC = V30;	### J10 9
+#NET "TP[5]"   	 LOC = W30;	### J10 10
+#
+#NET "syn_light_ext" LOC = Y32;### J12 1
+##NET "ext_clk_I" TNM_NET = "ext_clk_I";
+##TIMESPEC TS_ext_clk_I = PERIOD "ext_clk_I" 2 ns HIGH 50 %;
+##NET "ext_clk_IB" TNM_NET = "ext_clk_IB";
+##TIMESPEC TS_ext_clk_I= PERIOD "ext_clk_IB" 2 ns HIGH 50 %;
+##NET "ext_clk_I" LOC = C28;    ### J9 1 clock from PPG shuld be 125M
+##NET "ext_clk_IB" LOC = B28;   ### J9 2
+#
+#NET "Tp[1]" LOC = C28;    ### J9 1 
+#NET "Tp[2]" LOC = B28;    ### J9 2
+#NET "Tp[3]" LOC = C29;    ### J9 3 
+#NET "Tp[4]" LOC = D29;    ### J9 4
+#NET "apd_fpga_hit_p[2]" LOC = F33;#QLD4_LVDS1+ J9 5
+#NET "apd_fpga_hit_n[2]" LOC = G33;#QLD4_LVDS1- J9 6
+#NET "apd_fpga_hit_p[3]" LOC = J25;#QLD4_LVDS2+ J9 7
+#NET "apd_fpga_hit_n[3]" LOC = J24;#QLD4_LVDS2- J9 8
+
+############ end of Bob ###########
+
+#NET "GPS_pulse_in" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "syn_light_ext" CLOCK_DEDICATED_ROUTE = FALSE;
+##NET "apd_fpga_hit_n[0]" CLOCK_DEDICATED_ROUTE = FALSE;
+##NET "apd_fpga_hit_n[1]" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "apd_fpga_hit_p[2]" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "apd_fpga_hit_n[2]" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "apd_fpga_hit_p[3]" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "apd_fpga_hit_n[3]" CLOCK_DEDICATED_ROUTE = FALSE;
+
+#INST "Inst_multichnlTDC/hitin_bufg_inst[8].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
+#INST "Inst_multichnlTDC/hitin_bufg_inst[9].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
+#INST "Inst_multichnlTDC/hitin_bufg_inst[14].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
+#INST "Inst_multichnlTDC/hitin_bufg_inst[15].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
+#INST "Inst_multichnlTDC/hitin_bufg_inst[16].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
+#
+#
+#INST "Inst_multichnlTDC/hitin_bufg_inst[10].BUFG_inst" LOC = BUFGCTRL_X0Y0:BUFGCTRL_X0Y15;
+#INST "Inst_multichnlTDC/hitin_bufg_inst[11].BUFG_inst" LOC = BUFGCTRL_X0Y0:BUFGCTRL_X0Y15;
+#INST "Inst_multichnlTDC/hitin_bufg_inst[12].BUFG_inst" LOC = BUFGCTRL_X0Y0:BUFGCTRL_X0Y15;
+#INST "Inst_multichnlTDC/hitin_bufg_inst[13].BUFG_inst" LOC = BUFGCTRL_X0Y0:BUFGCTRL_X0Y15;
+
+##Clock region 1:SLICE_X0->SLICE_X83
+
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[1].FDCE_inst" LOC = SLICE_X20Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[2].FDCE_inst" LOC = SLICE_X24Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[3].FDCE_inst" LOC = SLICE_X28Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[4].FDCE_inst" LOC = SLICE_X32Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[5].FDCE_inst" LOC = SLICE_X36Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[6].FDCE_inst" LOC = SLICE_X40Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[7].FDCE_inst" LOC = SLICE_X44Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[8].FDCE_inst" LOC = SLICE_X48Y180;
+
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[9].FDCE_inst" LOC = SLICE_X86Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[10].FDCE_inst" LOC = SLICE_X90Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[11].FDCE_inst" LOC = SLICE_X94Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[12].FDCE_inst" LOC = SLICE_X98Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[13].FDCE_inst" LOC = SLICE_X102Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[14].FDCE_inst" LOC = SLICE_X106Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[15].FDCE_inst" LOC = SLICE_X110Y180;
+#INST "Inst_multichnlTDC/tdc_count_hit_inst[16].FDCE_inst" LOC = SLICE_X114Y180;
+
+#INST "*Chnl_1_inst*carrychain_plain_inst/*" LOC=SLICE_X19Y*;
+#INST "*Chnl_1_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X19Y0;
+#INST "Inst_multichnlTDC/Chnl_1_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X19Y0;
+#INST "Inst_multichnlTDC/Chnl_1_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X19Y0;
+#INST "Inst_multichnlTDC/Chnl_1_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X19Y0;
+#
+#INST "*Chnl_2_inst*carrychain_plain_inst/*" LOC=SLICE_X23Y*;
+#INST "*Chnl_2_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X23Y0;
+#INST "Inst_multichnlTDC/Chnl_2_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X23Y0;
+#INST "Inst_multichnlTDC/Chnl_2_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X23Y0;
+#INST "Inst_multichnlTDC/Chnl_2_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X23Y0;
+#
+#INST "*Chnl_3_inst*carrychain_plain_inst/*" LOC=SLICE_X27Y*;
+#INST "*Chnl_3_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X27Y0;
+#INST "Inst_multichnlTDC/Chnl_3_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X27Y0;
+#INST "Inst_multichnlTDC/Chnl_3_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X27Y0;
+#INST "Inst_multichnlTDC/Chnl_3_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X27Y0;
+#
+#INST "*Chnl_4_inst*carrychain_plain_inst/*" LOC=SLICE_X31Y*;
+#INST "*Chnl_4_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X31Y0;
+#INST "Inst_multichnlTDC/Chnl_4_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X31Y0;
+#INST "Inst_multichnlTDC/Chnl_4_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X31Y0;
+#INST "Inst_multichnlTDC/Chnl_4_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X31Y0;
+#INST "*Chnl_5_inst*carrychain_plain_inst/*" LOC=SLICE_X35Y*;
+#INST "*Chnl_5_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X35Y0;
+#INST "Inst_multichnlTDC/Chnl_5_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X35Y0;
+#INST "Inst_multichnlTDC/Chnl_5_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X35Y0;
+#INST "Inst_multichnlTDC/Chnl_5_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X35Y0;
+#INST "*Chnl_6_inst*carrychain_plain_inst/*" LOC=SLICE_X39Y*;
+#INST "*Chnl_6_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X39Y0;
+#INST "Inst_multichnlTDC/Chnl_6_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X39Y0;
+#INST "Inst_multichnlTDC/Chnl_6_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X39Y0;
+#INST "Inst_multichnlTDC/Chnl_6_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X39Y0;
+#INST "*Chnl_7_inst*carrychain_plain_inst/*" LOC=SLICE_X43Y*;
+#INST "*Chnl_7_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X43Y0;
+#INST "Inst_multichnlTDC/Chnl_7_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X43Y0;
+#INST "Inst_multichnlTDC/Chnl_7_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X43Y0;
+#INST "Inst_multichnlTDC/Chnl_7_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X43Y0;
+#INST "*Chnl_8_inst*carrychain_plain_inst/*" LOC=SLICE_X47Y*;
+#INST "*Chnl_8_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X47Y0;
+#INST "Inst_multichnlTDC/Chnl_8_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X47Y0;
+#INST "Inst_multichnlTDC/Chnl_8_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X47Y0;
+#INST "Inst_multichnlTDC/Chnl_8_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X47Y0;
+
+#INST "*Chnl_9_inst*carrychain_plain_inst/*" LOC=SLICE_X85Y*;
+#INST "*Chnl_9_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X85Y0;
+#INST "Inst_multichnlTDC/Chnl_9_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X85Y0;
+#INST "Inst_multichnlTDC/Chnl_9_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X85Y0;
+#INST "Inst_multichnlTDC/Chnl_9_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X85Y0;
+#INST "*Chnl_10_inst*carrychain_plain_inst/*" LOC=SLICE_X89Y*;
+#INST "*Chnl_10_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X89Y0;
+#INST "Inst_multichnlTDC/Chnl_10_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X89Y0;
+#INST "Inst_multichnlTDC/Chnl_10_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X89Y0;
+#INST "Inst_multichnlTDC/Chnl_10_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X89Y0;
+#INST "*Chnl_11_inst*carrychain_plain_inst/*" LOC=SLICE_X93Y*;
+#INST "*Chnl_11_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X93Y0;
+#INST "Inst_multichnlTDC/Chnl_11_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X93Y0;
+#INST "Inst_multichnlTDC/Chnl_11_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X93Y0;
+#INST "Inst_multichnlTDC/Chnl_11_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X93Y0;
+
+#INST "*Chnl_12_inst*carrychain_plain_inst/*" LOC=SLICE_X63Y*;
+#INST "*Chnl_12_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X63Y0;
+#INST "*Chnl_13_inst*carrychain_plain_inst/*" LOC=SLICE_X67Y*;
+#INST "*Chnl_13_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X67Y0;
+#INST "*Chnl_14_inst*carrychain_plain_inst/*" LOC=SLICE_X85Y*;
+#INST "*Chnl_14_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X85Y0;
+#INST "*Chnl_15_inst*carrychain_plain_inst/*" LOC=SLICE_X89Y*;
+#INST "*Chnl_15_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X89Y0;
+#INST "*Chnl_16_inst*carrychain_plain_inst/*" LOC=SLICE_X93Y*;
+#INST "*Chnl_16_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X93Y0;
+#INST "*Chnl_12_inst*carrychain_plain_inst/*" LOC=SLICE_X97Y*;
+#INST "*Chnl_12_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X97Y0;
+#INST "Inst_multichnlTDC/Chnl_12_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X97Y0;
+#INST "Inst_multichnlTDC/Chnl_12_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X97Y0;
+#INST "Inst_multichnlTDC/Chnl_12_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X97Y0;
+#INST "*Chnl_13_inst*carrychain_plain_inst/*" LOC=SLICE_X101Y*;
+#INST "*Chnl_13_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X101Y0;
+#INST "Inst_multichnlTDC/Chnl_13_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X101Y0;
+#INST "Inst_multichnlTDC/Chnl_13_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X101Y0;
+#INST "Inst_multichnlTDC/Chnl_13_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X101Y0;
+#INST "*Chnl_14_inst*carrychain_plain_inst/*" LOC=SLICE_X105Y*;
+#INST "*Chnl_14_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X105Y0;
+#INST "Inst_multichnlTDC/Chnl_14_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X105Y0;
+#INST "Inst_multichnlTDC/Chnl_14_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X105Y0;
+#INST "Inst_multichnlTDC/Chnl_14_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X105Y0;
+#INST "*Chnl_15_inst*carrychain_plain_inst/*" LOC=SLICE_X109Y*;
+#INST "*Chnl_15_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X109Y0;
+#INST "Inst_multichnlTDC/Chnl_15_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X109Y0;
+#INST "Inst_multichnlTDC/Chnl_15_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X109Y0;
+#INST "Inst_multichnlTDC/Chnl_15_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X109Y0;
+#INST "*Chnl_16_inst*carrychain_plain_inst/*" LOC=SLICE_X113Y*;
+#INST "*Chnl_16_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X113Y0;
+#INST "Inst_multichnlTDC/Chnl_16_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X113Y0;
+#INST "Inst_multichnlTDC/Chnl_16_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X113Y0;
+#INST "Inst_multichnlTDC/Chnl_16_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X113Y0;
+###################
+
+
+#NET "send_en_am_p" IOSTANDARD = LVPECL_25;
+#NET "send_en_am_n" IOSTANDARD = LVPECL_25;
+##NET "ext_clk_I" IOSTANDARD = LVPECL_25;
+##NET "ext_clk_IB" IOSTANDARD = LVPECL_25;
+#NET "SERIAL_OUT_n[0]" IOSTANDARD = LVPECL_25;
+#NET "SERIAL_OUT_p[0]" IOSTANDARD = LVPECL_25;
+##NET "SERIAL_OUT_p[1]" IOSTANDARD = LVPECL_25;
+##NET "SERIAL_OUT_n[1]" IOSTANDARD = LVPECL_25;
+#NET "SERIAL_OUT_n[2]" IOSTANDARD = LVPECL_25;
+#NET "SERIAL_OUT_p[2]" IOSTANDARD = LVPECL_25;
+#NET "PPG_start" IOSTANDARD = LVCMOS25;
+#NET "PPG_clock" IOSTANDARD = LVCMOS25;
+#NET "Tp[0]" IOSTANDARD = LVCMOS25;
+#NET "Tp[1]" IOSTANDARD = LVCMOS25;
+#NET "Tp[2]" IOSTANDARD = LVCMOS25;
+#NET "Tp[3]" IOSTANDARD = LVCMOS25;
+#NET "Tp[4]" IOSTANDARD = LVCMOS25;
+#NET "Tp[5]" IOSTANDARD = LVCMOS25;
+#NET "Tp[6]" IOSTANDARD = LVCMOS25;
+#NET "Tp[7]" IOSTANDARD = LVCMOS25;
+#NET "Tp[8]" IOSTANDARD = LVCMOS25;
+		
+############### KZ veify logic ################################
+NET "LD_pulse_in_p[0]" LOC = C28 | IOSTANDARD = LVDS_25;#QLD3_LVDS1+ J9 1
+NET "LD_pulse_in_n[0]" LOC = B28 | IOSTANDARD = LVDS_25;#QLD3_LVDS1- J9 2
+NET "LD_pulse_in_p[1]" LOC = C29 | IOSTANDARD = LVDS_25;#QLD3_LVDS2+ J9 3
+NET "LD_pulse_in_n[1]" LOC = D29 | IOSTANDARD = LVDS_25;#QLD3_LVDS2- J9 4
+NET "LD_pulse_in_p[2]" LOC = F33 | IOSTANDARD = LVDS_25;#QLD4_LVDS1+ J9 5
+NET "LD_pulse_in_n[2]" LOC = G33 | IOSTANDARD = LVDS_25;#QLD4_LVDS1- J9 6
+NET "LD_pulse_in_p[3]" LOC = J25 | IOSTANDARD = LVDS_25;#QLD4_LVDS2+ J9 7
+NET "LD_pulse_in_n[3]" LOC = J24 | IOSTANDARD = LVDS_25;#QLD4_LVDS2- J9 8
+######### 1 #########
+NET "LD_pulse_in_p[4]"		LOC = L15 | IOSTANDARD = LVDS_25;### J8 1
+NET "LD_pulse_in_n[4]"		LOC = L14 | IOSTANDARD = LVDS_25;### J8 2
+NET "LD_pulse_in_p[5]"		LOC = K16 | IOSTANDARD = LVDS_25;### J8 3
+NET "LD_pulse_in_n[5]"		LOC = L16 | IOSTANDARD = LVDS_25;### J8 4
+NET "LD_pulse_in_p[6]"		LOC = B20 | IOSTANDARD = LVDS_25;### J8 5
+NET "LD_pulse_in_n[6]"		LOC = C19 | IOSTANDARD = LVDS_25;### J8 6
+NET "LD_pulse_in_p[7]"		LOC = F21 | IOSTANDARD = LVDS_25;### J8 7
+NET "LD_pulse_in_n[7]"		LOC = G20 | IOSTANDARD = LVDS_25;### J8 8
+######### 2 #########
+NET "LD_pulse_in_p[8]"		LOC = N33 | IOSTANDARD = LVDS_25;### J10 1
+NET "LD_pulse_in_n[8]"		LOC = M33 | IOSTANDARD = LVDS_25;### J10 2
+NET "LD_pulse_in_p[9]"		LOC = K26 | IOSTANDARD = LVDS_25;### J10 3
+NET "LD_pulse_in_n[9]"		LOC = K27 | IOSTANDARD = LVDS_25;### J10 4
+NET "LD_pulse_in_p[10]"		LOC = V34 | IOSTANDARD = LVDS_25;### J10 5
+NET "LD_pulse_in_n[10]"		LOC = W34 | IOSTANDARD = LVDS_25;### J10 6
+NET "LD_pulse_in_p[11]" 	LOC = N28 | IOSTANDARD = LVDS_25;### J10 7
+NET "LD_pulse_in_n[11]" 	LOC = N29 | IOSTANDARD = LVDS_25;### J10 8
+######### 3 #########
+NET "LD_pulse_in_p[12]"		LOC = N28 | IOSTANDARD = LVDS_25;### J11 1
+NET "LD_pulse_in_n[12]"		LOC = N29 | IOSTANDARD = LVDS_25;### J11 2
+NET "LD_pulse_in_p[13]"		LOC = L23 | IOSTANDARD = LVDS_25;### J11 3
+NET "LD_pulse_in_n[13]"		LOC = M22 | IOSTANDARD = LVDS_25;### J11 4
+NET "LD_pulse_in_p[14]"		LOC = L13 | IOSTANDARD = LVDS_25;### J11 5
+NET "LD_pulse_in_n[14]"		LOC = M13 | IOSTANDARD = LVDS_25;### J11 6
+NET "LD_pulse_in_p[15]" 	LOC = M12 | IOSTANDARD = LVDS_25;### J11 7
+NET "LD_pulse_in_n[15]" 	LOC = M11 | IOSTANDARD = LVDS_25;### J11 8
+######### 3 #########
+NET "LD_pulse_in_p[16]"		LOC = H28 | IOSTANDARD = LVPECL_25;### J8 9
+NET "LD_pulse_in_n[16]"		LOC = H29 | IOSTANDARD = LVPECL_25;### J8 10
+
+NET "LD_pulse_in_p[17]" 	LOC = B31 | IOSTANDARD = LVPECL_25;	### J9 9
+NET "LD_pulse_in_n[17]" 	LOC = A31 | IOSTANDARD = LVPECL_25; ### J9 10
+
+NET "LD_pulse_in_p[18]" 	LOC = V30 | IOSTANDARD = LVPECL_25;	### J10 9
+NET "LD_pulse_in_n[18]"   	LOC = W30 | IOSTANDARD = LVPECL_25;	### J10 10
+
+NET "LD_pulse_in_p[19]" 	LOC = A10 | IOSTANDARD = LVPECL_25;	### J11 9
+NET "LD_pulse_in_n[19]"   	LOC = B10 | IOSTANDARD = LVPECL_25;	### J11 10
+
+############### end of KZ veify logic ################################
