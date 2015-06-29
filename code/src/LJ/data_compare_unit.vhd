@@ -102,7 +102,19 @@ signal verify_active_d1 : STD_LOGIC;
 signal fifo_rd_en_reg	: STD_LOGIC;
 
 begin
-	--产生比较开始信号
+	
+	--1.fifo的读出方式为，FIFO非空，因此在没有比较时，外部数据是什么不影响比较结果
+	--2.比较开始前，RAM中的比较数据已经先写入，RAM容量为512KB，即数据的最大重复长度为512KB
+	--  建议重复长度为2K，
+	--3.比较过程如下：初始时，比较使能计数rd_com_cnt为3，rd_cnt为0，RAM地址为0
+	--  a.fifo读出1字节rd_cnt + 1 如果rd_com_cnt与rd_cnt相等，产生比较使能信号1个时钟周期
+	--  b.如果比较结果相等：更新rd_com_cnt（值为rd_cnt），RAM地址+1
+	--              否则：rd_com_cnt不变，RAM地址不变
+	--  c.
+	--  由以上两步可以看出，当数据流由错误出现时，当前比较值不变，数据流保持流动，数据可以在下一次重复到达时重新同步上，
+	--  当然数据可能在下一次重复到达前相等，此时会更新比较值，继续等待下一次重复到达，所以比较数据在单词重复过程中最好不要有重复的
+	--  4字节数据，这应该很容易实现
+	--步骤3的实现按流水线设计，1.数据到达；2.rd_cnt计数,比较数据;3.更新rd_com_cnt，更新比较RAM；4.地址更新比较结果
 	fifo_rd_en	<= fifo_rd_en_reg;
 	process (sys_clk_320M, sys_rst_n) begin
 		if(sys_rst_n = '0') then
@@ -123,7 +135,11 @@ begin
 --			fifo_rd_data_d	<= fifo_rd_data;
 --		end if;
 --	end process;
-	
+	---对读出的fifo数据进行拼装，输入的8bit数据按字节移位组成4字节数据
+	---每读出1字节数据，2bit的rd_cnt + 1
+	---ram_rd_data_d1 由读出的ram_rd_data_fix数据得到
+	---RAM写入时按字节写入，读出时按4字节读出，先写入的数据会在读出4字节的高字节，所以需要调整
+	ram_rd_data_fix <= ram_rd_data(7 downto 0) & ram_rd_data(15 downto 8) & ram_rd_data(23 downto 16) & ram_rd_data(31 downto 24);
 	process (sys_clk_320M, sys_rst_n) begin
 		if(sys_rst_n = '0') then
 			rd_cnt				<= (others => '0');
@@ -147,6 +163,7 @@ begin
 		end if;
 	end process;
 	
+	---数据比较
 	process (fifo_rd_data_d1, ram_rd_data_d1) begin
 		if(fifo_rd_data_d1 = ram_rd_data_d1) then
 			data_equal			<= '1';
@@ -156,6 +173,9 @@ begin
 	end process;
 	
 	---1.FIFO valid
+	---compare_cnt_reg记录的是当前比较数据在RAM中的位置
+	---当数据比较相等时，更新rd_cnt_com的值为当前fifo读出计数%2
+	---
 	ram_rd_addr	<= compare_cnt_reg(16 downto 0);
 	process (sys_clk_320M, sys_rst_n) begin
 		if(sys_rst_n = '0') then
@@ -181,7 +201,7 @@ begin
 			end if;
 		end if;
 	end process;
-	
+	--产生比较使能信号，当数据使能，且rd_cnt_d2的值与rd_cnt_com值相同
 	process (sys_clk_320M, sys_rst_n) begin
 		if(sys_rst_n = '0') then
 			fifo_rd_vld_d3		<= '0';
@@ -204,6 +224,9 @@ begin
 		end if;
 	end process;
 	
+	--当比较使能时，如果比较结果不一致，则将错误结果写入FIFO
+	--写入的结果为flag_bit & compare_cnt_reg(30 downto 0) & fifo_rd_data_d3;
+	--64位宽，
 	process (sys_clk_320M, sys_rst_n) begin
 		if(sys_rst_n = '0') then
 			compare_result_wr <= '0';
@@ -259,7 +282,7 @@ begin
 --		end if;
 --	end process;
 	
-	ram_rd_data_fix <= ram_rd_data(7 downto 0) & ram_rd_data(15 downto 8) & ram_rd_data(23 downto 16) & ram_rd_data(31 downto 24);
+	
 --	process (fifo_rd_vld, fifo_rd_data_pre, fifo_rd_data) begin
 --		if(fifo_rd_vld = '1') then
 --			fifo_rd_data_fix <= fifo_rd_data_pre(23 downto 0) & fifo_rd_data;

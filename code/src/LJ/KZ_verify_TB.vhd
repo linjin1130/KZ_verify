@@ -151,9 +151,9 @@ BEGIN
 		loop
 		wait until rising_edge(LD_pulse_in_p(16));
 		LD_pulse_cnt					<= LD_pulse_cnt + '1';
-		if(LD_pulse_cnt = 500) then--少一个数
+		if(LD_pulse_cnt = 500 and en_error = '1') then--少一个数
 			LD_pulse_in_p(7 downto 0)	<= LD_pulse_in_p(7 downto 0) + 2;
-		elsif(LD_pulse_cnt = 1020) then--多一个数
+		elsif(LD_pulse_cnt = 1020 and en_error = '1') then--多一个数
 			LD_pulse_in_p(7 downto 0)	<= LD_pulse_in_p(7 downto 0);
 		else
 			LD_pulse_in_p(7 downto 0)	<= LD_pulse_in_p(7 downto 0) + '1';
