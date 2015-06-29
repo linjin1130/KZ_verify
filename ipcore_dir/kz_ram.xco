@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 13.3
-# Date: Sun Mar 01 12:04:06 2015
+# Date: Sun Mar 08 15:23:50 2015
 #
 ##############################################################
 #
@@ -46,7 +46,7 @@ CSET axi_id_width=4
 CSET axi_slave_type=Memory_Slave
 CSET axi_type=AXI4_Full
 CSET byte_size=9
-CSET coe_file=E:\Work\FPGA\KZ_verify\ram_data-8192.coe
+CSET coe_file=no_coe_file_loaded
 CSET collision_warnings=ALL
 CSET component_name=kz_ram
 CSET disable_collision_warnings=false
@@ -58,7 +58,7 @@ CSET enable_b=Always_Enabled
 CSET error_injection_type=Single_Bit_Error_Injection
 CSET fill_remaining_memory_locations=true
 CSET interface_type=Native
-CSET load_init_file=true
+CSET load_init_file=false
 CSET memory_type=Simple_Dual_Port_RAM
 CSET operating_mode_a=WRITE_FIRST
 CSET operating_mode_b=WRITE_FIRST
@@ -77,7 +77,7 @@ CSET read_width_b=32
 CSET register_porta_input_of_softecc=false
 CSET register_porta_output_of_memory_core=false
 CSET register_porta_output_of_memory_primitives=false
-CSET register_portb_output_of_memory_core=false
+CSET register_portb_output_of_memory_core=true
 CSET register_portb_output_of_memory_primitives=false
 CSET register_portb_output_of_softecc=false
 CSET remaining_memory_locations=0
@@ -102,4 +102,4 @@ CSET write_width_b=32
 MISC pkg_timestamp=2011-03-11T08:24:14.000Z
 # END Extra information
 GENERATE
-# CRC: c710b2f6
+# CRC: cb0566e0

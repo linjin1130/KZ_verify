@@ -42,7 +42,7 @@ entity CRG is
 		sys_clk_80M : out	std_logic;
 		sys_clk_dcm : out	std_logic;
 		sys_clk_60M : out	std_logic;
-		sys_clk_200M : out	std_logic;
+		sys_clk_320M : out	std_logic;
 		sys_clk_160M : out std_logic;
 		sys_clk_160M_inv : out std_logic;
 		
@@ -145,7 +145,7 @@ inst_dcm : CLK_DCM
     CLK_OUT2 => sys_clk_160M,
     CLK_OUT3 => sys_clk_160M_inv,
     CLK_OUT4 => sys_clk_dcm,
-    CLK_OUT5 => sys_clk_200M,
+    CLK_OUT5 => sys_clk_320M,
 --    CLK_OUT6 => sys_clk_dcm,
 	 
     -- Status and control signals

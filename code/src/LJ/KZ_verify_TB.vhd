@@ -74,6 +74,7 @@ ARCHITECTURE behavior OF KZ_verify_TB IS
    signal cpld_fpga_brtrd_req : std_logic := '0';
    signal LD_pulse_in_p : std_logic_vector(19 downto 0) := (others => '1');
    signal LD_pulse_in_n : std_logic_vector(19 downto 0) := (others => '0');
+   signal LD_pulse_cnt		: std_logic_vector(9 downto 0) := (others => '0');
    signal wr_ram_cnt		: std_logic_vector(30 downto 0) := (others => '0');
    signal wr_ram_en	: std_logic:='0';
    signal wr_ram_1	: std_logic:='0';
@@ -149,7 +150,14 @@ BEGIN
 		wait for 10 ns;
 		loop
 		wait until rising_edge(LD_pulse_in_p(16));
-		LD_pulse_in_p(7 downto 0)	<= LD_pulse_in_p(7 downto 0) + '1';
+		LD_pulse_cnt					<= LD_pulse_cnt + '1';
+		if(LD_pulse_cnt = 500) then--少一个数
+			LD_pulse_in_p(7 downto 0)	<= LD_pulse_in_p(7 downto 0) + 2;
+		elsif(LD_pulse_cnt = 1020) then--多一个数
+			LD_pulse_in_p(7 downto 0)	<= LD_pulse_in_p(7 downto 0);
+		else
+			LD_pulse_in_p(7 downto 0)	<= LD_pulse_in_p(7 downto 0) + '1';
+		end if;
 		end loop;
    end process;
 	LD_pulse_in_n(7 downto 0)	<= not LD_pulse_in_p(7 downto 0);

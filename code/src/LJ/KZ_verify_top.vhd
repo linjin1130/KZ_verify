@@ -37,13 +37,19 @@ generic(
 		);
 	port(
 	-- fix by herry make sys_clk_80M to sys_clk_160M
-	   sys_clk_200M	:	in	std_logic;--system clock,200MHz
+	   sys_clk_dcm	:	in	std_logic;--system clock,200MHz
 	   sys_clk_80M		:	in	std_logic;--system clock,80MHz
+		sys_clk_320M		:	in	std_logic;--system clock,320MHz
 		sys_rst_n		:	in	std_logic;--system reset,low active
 		tdc_cpldif_fifo_clr:	out	std_logic;--system reset,low active
 		
 		LD_pulse_in_p	:	in	std_logic_vector(19 downto 0);
 		LD_pulse_in_n	:	in	std_logic_vector(19 downto 0);
+		----delay chip NB6L295-D
+		Dac_en	   : out  STD_LOGIC; --DAC chip enable
+		Dac_Sclk   : out  STD_LOGIC; --DAC chip clock
+		Dac_Csn    : out  STD_LOGIC; --DAC chip select
+		Dac_Din    : out  STD_LOGIC; --DAC data input
 
 		---cpldif module
 		cpldif_kz_vrf_addr	:	in	std_logic_vector(7 downto 0);
@@ -62,9 +68,6 @@ generic(
 		
 		compare_result_wr  : out 	std_logic;
 		compare_result		 : out 	std_logic_vector(63 downto 0)
---		
---		POC_ctrl		 : out std_logic_vector(13 downto 0);
---		chopper_ctrl : in std_logic--when high, go into phase steady state
 	);
 end KZ_verify_top;
 
@@ -80,6 +83,8 @@ COMPONENT kz_reg_resolve
 		cpldif_kz_vrf_wr_data : IN std_logic_vector(31 downto 0);          
 		verify_active_1 : OUT std_logic;
 		verify_active_2 : OUT std_logic;
+		Dac_Ena 		:  OUT std_logic;
+		Dac_data		:	out std_logic_vector(15 downto 0);
 		ram_wr_en_1 : OUT std_logic;
 		ram_wr_en_2 : OUT std_logic;
 		ram_wr_data : OUT std_logic_vector(7 downto 0);
@@ -107,6 +112,7 @@ COMPONENT kz_reg_resolve
 COMPONENT data_compare_unit
 	PORT(
 		sys_clk_80M : IN std_logic;
+		sys_clk_320M		:	in	std_logic;--system clock,320MHz
 		sys_rst_n : IN std_logic;
 		flag_bit : IN std_logic;
 		verify_active : IN std_logic;
@@ -115,7 +121,7 @@ COMPONENT data_compare_unit
 		ram_wr_addr : IN std_logic_vector(19 downto 0);
 		fifo_prog_empty : IN std_logic;
 		fifo_rd_vld : IN std_logic;
-		fifo_rd_data : IN std_logic_vector(31 downto 0);          
+		fifo_rd_data : IN std_logic_vector(7 downto 0);          
 		compare_total_cnt : OUT std_logic_vector(31 downto 0);          
 		compare_error_cnt : OUT std_logic_vector(31 downto 0);          
 		fifo_rd_en : OUT std_logic;
@@ -135,7 +141,7 @@ COMPONENT data_compare_unit
 		fifo_rd_en : IN std_logic;          
 		fifo_prog_empty : OUT std_logic;
 		fifo_rd_vld : OUT std_logic;
-		fifo_rd_data : OUT std_logic_vector(31 downto 0)
+		fifo_rd_data : OUT std_logic_vector(7 downto 0)
 		);
 	END COMPONENT;
 	
@@ -153,7 +159,34 @@ COMPONENT data_compare_unit
     valid : OUT STD_LOGIC
   );
 END COMPONENT;
--- COMP_TAG_END ------ End COMPONENT Declaration -----------
+
+component kz_dcm
+port
+ (-- Clock in ports
+  CLK_IN1           : in     std_logic;
+  -- Clock out ports
+  CLK_OUT1          : out    std_logic;
+  -- Status and control signals
+  RESET             : in     std_logic;
+  LOCKED            : out    std_logic
+ );
+end component;
+
+	COMPONENT NB6L295_CTRL
+    PORT(
+         CLK : IN  std_logic;
+         Dac_Ena : IN  std_logic;
+         Dac_Data : IN  std_logic_vector(15 downto 0);
+         Sys_Rst_n : IN  std_logic;
+         Dac_Finish : OUT  std_logic;
+         Dac_en : OUT  std_logic;
+         Dac_Sclk : OUT  std_logic;
+         Dac_Csn : OUT  std_logic;
+         Dac_Din : OUT  std_logic
+        );
+    END COMPONENT;
+
+--COMP_TAG_END ------ End COMPONENT Declaration -----------
 	
 	signal verify_active_1 			: std_logic;
 	signal verify_active_2			: std_logic;
@@ -167,23 +200,27 @@ END COMPONENT;
 	signal delay_in 	:  std_logic_vector(15 downto 0);
 	signal delay_out 	:  std_logic_vector(15 downto 0);
 	
+	signal Dac_Ena 		:  std_logic;
+	signal Dac_data		:	std_logic_vector(15 downto 0);
+	
 	signal control_clk 		: std_logic_vector(19 downto 16);
 	signal kz_data_in_1 		: std_logic_vector(7 downto 0);
 	signal fifo_rd_en_1 		: std_logic;          
 	signal fifo_prog_empty_1	: std_logic;
 	signal fifo_rd_vld_1	 	: std_logic;
-	signal fifo_rd_data_1 	: std_logic_vector(31 downto 0);
+	signal fifo_rd_data_1 	: std_logic_vector(7 downto 0);
 	
 	signal kz_data_in_2 		: std_logic_vector(7 downto 0);
 	signal fifo_rd_en_2 		: std_logic;          
 	signal fifo_prog_empty_2	: std_logic;
 	signal fifo_rd_vld_2	 	: std_logic;
-	signal fifo_rd_data_2 	: std_logic_vector(31 downto 0);
+	signal fifo_rd_data_2 	: std_logic_vector(7 downto 0);
 	signal compare_result_wr_1 	: std_logic;
 	signal compare_result_wr_2 	: std_logic;
 	signal compare_result_1 	: std_logic_vector(63 downto 0);
 	signal compare_result_2 	: std_logic_vector(63 downto 0);
 	
+	signal sys_clk_200M	: std_logic;
 	signal sys_rst_h		: std_logic;
 	signal fifo_clr		: std_logic;
 	
@@ -213,6 +250,23 @@ RST => sys_rst_h
 -- 1-bit reset input
 );
 
+-- COMP_TAG_END ------ End COMPONENT Declaration ------------
+-- The following code must appear in the VHDL architecture
+-- body. Substitute your own instance name and net names.
+------------- Begin Cut here for INSTANTIATION Template ----- INST_TAG
+kz_dcm_inst : kz_dcm
+  port map
+   (-- Clock in ports
+    CLK_IN1 => sys_clk_dcm,
+    -- Clock out ports
+    CLK_OUT1 => sys_clk_200m,
+    -- Status and control signals
+    RESET  => '0',
+    LOCKED => open);
+-- INST_TAG_END ------ End INSTANTIATION Template ------------
+
+-- 
+
 Inst_kz_reg_resolve: kz_reg_resolve PORT MAP(
 		sys_clk_80M => sys_clk_80M,
 		sys_rst_n => sys_rst_n,
@@ -223,6 +277,8 @@ Inst_kz_reg_resolve: kz_reg_resolve PORT MAP(
 		ram_wr_en_2 => ram_wr_en_2,
 		ram_wr_data => ram_wr_data,
 		ram_wr_addr => ram_wr_addr,
+		Dac_Ena => Dac_Ena,
+		Dac_data => Dac_data,
 		cpldif_kz_vrf_addr => cpldif_kz_vrf_addr,
 		cpldif_kz_vrf_wr_en => cpldif_kz_vrf_wr_en,
 		cpldif_kz_vrf_rd_en => cpldif_kz_vrf_rd_en,
@@ -295,7 +351,8 @@ end generate;
 	kz_data_in_1	<= delay_out(7 downto 0);
 	kz_data_in_2	<= delay_out(15 downto 8);
 	Inst_data_gen_unit_1: data_gen_unit PORT MAP(
-		sys_clk_80M => sys_clk_80M,
+		sys_clk_80M => sys_clk_320M,
+--		sys_clk_320M => sys_clk_320M,
 		sys_rst_n => sys_rst_n,
 		fifo_clr => fifo_clr,
 		verify_active => verify_active_1,
@@ -309,6 +366,7 @@ end generate;
 	
 	Inst_data_compare_unit_1: data_compare_unit PORT MAP(
 		sys_clk_80M => sys_clk_80M,
+		sys_clk_320M => sys_clk_320M,
 		sys_rst_n => sys_rst_n,
 		flag_bit => '0',
 		verify_active => verify_active_1,
@@ -326,7 +384,8 @@ end generate;
 	);
 
 	Inst_data_gen_unit_2: data_gen_unit PORT MAP(
-		sys_clk_80M => sys_clk_80M,
+		sys_clk_80M => sys_clk_320M,
+--		sys_clk_320M => sys_clk_320M,
 		sys_rst_n => sys_rst_n,
 		fifo_clr => fifo_clr,
 		verify_active => verify_active_2,
@@ -340,6 +399,7 @@ end generate;
 	
 	Inst_data_compare_unit_2: data_compare_unit PORT MAP(
 		sys_clk_80M => sys_clk_80M,
+		sys_clk_320M => sys_clk_320M,
 		sys_rst_n => sys_rst_n,
 		flag_bit => '1',
 		verify_active => verify_active_2,
@@ -369,7 +429,7 @@ end generate;
 Inst_merge_fifo : merge_fifo
   PORT MAP (
     rst => fifo_clr,
-    wr_clk => sys_clk_80M,
+    wr_clk => sys_clk_320M,
     rd_clk => sys_clk_80M,
     din => compare_result_tmp_in,
     wr_en => compare_result_wr_tmp,
@@ -379,6 +439,18 @@ Inst_merge_fifo : merge_fifo
     empty => compare_result_empty_tmp,
     valid => compare_result_vld_tmp
   );
+  
+  NB6L295_CTRL_inst: NB6L295_CTRL PORT MAP (
+          CLK => sys_clk_80M,
+          Dac_Ena => Dac_Ena,
+          Dac_Data => Dac_Data,
+          Sys_Rst_n => Sys_Rst_n,
+          Dac_Finish => open,
+          Dac_en => Dac_en,
+          Dac_Sclk => Dac_Sclk,
+          Dac_Csn => Dac_Csn,
+          Dac_Din => Dac_Din
+        );
   
 end Behavioral;
 

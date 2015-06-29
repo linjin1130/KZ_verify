@@ -25,6 +25,10 @@ NET "cpld_fpga_sglwr" LOC = AP12;
 NET "cpld_fpga_brtrd_req" LOC = AC12;
 NET "fpga_cpld_burst_act" LOC = AD11;
 
+NET "Dac_en" 	LOC = B33;
+NET "Dac_Sclk" LOC = C34;
+NET "Dac_Csn" 	LOC = B34;
+NET "Dac_Din" 	LOC = C33;
 
 #INST "*Chnl_1_inst*carrychain_plain_inst/*" LOC=SLICE_X19Y*;
 #INST "*Chnl_2_inst*carrychain_plain_inst/*" LOC=SLICE_X23Y*;
@@ -44,7 +48,7 @@ NET "fpga_cpld_burst_act" LOC = AD11;
 #INST "*Chnl_16_inst*carrychain_plain_inst/*" LOC=SLICE_X93Y*;
 #INST "*SimuHitGene*CARRY4*" LOC=SLICE_X97Y*;
 #INST "Inst_SimuHitGene " KEEP = TRUE;
-INST "*SimuHitGene*" LOC=SLICE_X117Y*;
+#INST "*SimuHitGene*" LOC=SLICE_X117Y*;
 #INST "hitin_bufg_inst[14].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
 #INST "hitin_bufg_inst[8].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
 NET "clk_40M_I" LOC = J9;
@@ -488,14 +492,14 @@ NET "LD_pulse_in_n[10]"		LOC = W34 | IOSTANDARD = LVDS_25;### J10 6
 NET "LD_pulse_in_p[11]" 	LOC = N28 | IOSTANDARD = LVDS_25;### J10 7
 NET "LD_pulse_in_n[11]" 	LOC = N29 | IOSTANDARD = LVDS_25;### J10 8
 ######### 3 #########
-NET "LD_pulse_in_p[12]"		LOC = N28 | IOSTANDARD = LVDS_25;### J11 1
-NET "LD_pulse_in_n[12]"		LOC = N29 | IOSTANDARD = LVDS_25;### J11 2
-NET "LD_pulse_in_p[13]"		LOC = L23 | IOSTANDARD = LVDS_25;### J11 3
-NET "LD_pulse_in_n[13]"		LOC = M22 | IOSTANDARD = LVDS_25;### J11 4
-NET "LD_pulse_in_p[14]"		LOC = L13 | IOSTANDARD = LVDS_25;### J11 5
-NET "LD_pulse_in_n[14]"		LOC = M13 | IOSTANDARD = LVDS_25;### J11 6
-NET "LD_pulse_in_p[15]" 	LOC = M12 | IOSTANDARD = LVDS_25;### J11 7
-NET "LD_pulse_in_n[15]" 	LOC = M11 | IOSTANDARD = LVDS_25;### J11 8
+NET "LD_pulse_in_p[12]"		LOC = L23 | IOSTANDARD = LVDS_25;### J11 1
+NET "LD_pulse_in_n[12]"		LOC = M22 | IOSTANDARD = LVDS_25;### J11 2
+NET "LD_pulse_in_p[13]"		LOC = L13 | IOSTANDARD = LVDS_25;### J11 3
+NET "LD_pulse_in_n[13]"		LOC = M13 | IOSTANDARD = LVDS_25;### J11 4
+NET "LD_pulse_in_p[14]"		LOC = M12 | IOSTANDARD = LVDS_25;### J11 5
+NET "LD_pulse_in_n[14]"		LOC = M11 | IOSTANDARD = LVDS_25;### J11 6
+NET "LD_pulse_in_p[15]" 	LOC = U23 | IOSTANDARD = LVDS_25;### J11 7
+NET "LD_pulse_in_n[15]" 	LOC = V23 | IOSTANDARD = LVDS_25;### J11 8
 ######### 3 #########
 NET "LD_pulse_in_p[16]"		LOC = H28 | IOSTANDARD = LVPECL_25;### J8 9
 NET "LD_pulse_in_n[16]"		LOC = H29 | IOSTANDARD = LVPECL_25;### J8 10
@@ -505,6 +509,10 @@ NET "LD_pulse_in_n[17]" 	LOC = A31 | IOSTANDARD = LVPECL_25; ### J9 10
 
 NET "LD_pulse_in_p[18]" 	LOC = V30 | IOSTANDARD = LVPECL_25;	### J10 9
 NET "LD_pulse_in_n[18]"   	LOC = W30 | IOSTANDARD = LVPECL_25;	### J10 10
+NET "LD_pulse_in_p[18]" CLOCK_DEDICATED_ROUTE = FALSE;
+##NET "apd_fpga_hit_n[1]" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "apd_fpga_hit_p[2]" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "apd_fpga_hit_n[2]" CLOCK_DEDICATED_ROUTE = FALSE;
 
 NET "LD_pulse_in_p[19]" 	LOC = A10 | IOSTANDARD = LVPECL_25;	### J11 9
 NET "LD_pulse_in_n[19]"   	LOC = B10 | IOSTANDARD = LVPECL_25;	### J11 10

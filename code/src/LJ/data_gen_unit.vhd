@@ -44,7 +44,7 @@ port(
 		fifo_rd_en		:	in		std_logic;
 		fifo_prog_empty:	out	std_logic;
 		fifo_rd_vld		:	out	std_logic;
-		fifo_rd_data	:	out	std_logic_vector(31 downto 0)
+		fifo_rd_data	:	out	std_logic_vector(7 downto 0)
 	);
 end data_gen_unit;
 
@@ -58,7 +58,7 @@ COMPONENT kz_fifo
     din : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     wr_en : IN STD_LOGIC;
     rd_en : IN STD_LOGIC;
-    dout : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    dout : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     full : OUT STD_LOGIC;
     empty : OUT STD_LOGIC;
     valid : OUT STD_LOGIC;

@@ -48,6 +48,9 @@ entity kz_reg_resolve is
 		verify_active_1 : OUT std_logic;
 		verify_active_2 : OUT std_logic;
 		
+		Dac_Ena 		:  OUT std_logic;
+		Dac_data		:	out std_logic_vector(15 downto 0);
+		
 		ram_wr_en_1		:	out		std_logic;--system clock,200MHz
 		ram_wr_en_2		:	out		std_logic;--system clock,200MHz
 		ram_wr_data		:	out		std_logic_vector(7 downto 0);
@@ -152,6 +155,21 @@ begin
 		if(addr_sel = x"02" and cpldif_kz_vrf_wr_en = '1') then--CONTROL REG
 			verify_1		<= cpldif_kz_vrf_wr_data(0);
 			verify_2		<= cpldif_kz_vrf_wr_data(1);
+		end if;
+	end if;
+end process;
+
+process(sys_clk_80M, sys_rst_n)
+begin
+	if(sys_rst_n = '0') then
+		Dac_Ena		<= '0';
+		Dac_data		<= (others => '0');
+	elsif rising_edge(sys_clk_80M) then
+		if(addr_sel = x"02" and cpldif_kz_vrf_wr_en = '1') then--CONTROL REG
+			Dac_Ena		<= '1';
+			Dac_data		<= cpldif_kz_vrf_wr_data(15 downto 0);
+		else
+			Dac_Ena		<= '0';
 		end if;
 	end if;
 end process;

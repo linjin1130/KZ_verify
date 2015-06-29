@@ -72,6 +72,12 @@ entity ground_pro_top is
 		fpga_cpld_burst_en	:	out	std_logic;--burst enable,indicate fifo has stored a burst length	
 		fpga_cpld_rst_n		:	out	std_logic;
 		
+		----delay chip NB6L295-D
+		Dac_en	   : out  STD_LOGIC; --DAC chip enable
+		Dac_Sclk   : out  STD_LOGIC; --DAC chip clock
+		Dac_Csn    : out  STD_LOGIC; --DAC chip select
+		Dac_Din    : out  STD_LOGIC; --DAC data input
+		
 		LD_pulse_in_p : IN std_logic_vector(19 downto 0);
 		LD_pulse_in_n : IN std_logic_vector(19 downto 0)
 		--*************************
@@ -229,10 +235,10 @@ architecture Behavioral of ground_pro_top is
 		cpldif_crg_rd_en : IN std_logic;          
 		sys_clk_80M : OUT std_logic;
 		sys_clk_60M : OUT std_logic;
-		sys_clk_200M : OUT std_logic;
+		sys_clk_dcm : OUT std_logic;
 		sys_clk_160M : OUT std_logic;
 		sys_clk_160M_inv : OUT std_logic;
-		sys_clk_dcm : OUT std_logic;
+		sys_clk_320m : OUT std_logic;
 		sys_rst_n : OUT std_logic;
 		crg_cpldif_rd_data : OUT std_logic_vector(31 downto 0)
 		);
@@ -267,12 +273,18 @@ architecture Behavioral of ground_pro_top is
 	
 		COMPONENT KZ_verify_top
 	PORT(
-		sys_clk_200M : IN std_logic;
+		sys_clk_dcm : IN std_logic;
 		sys_clk_80M : IN std_logic;
+		sys_clk_320M : IN std_logic;
 		sys_rst_n : IN std_logic;
 		tdc_cpldif_fifo_clr : out std_logic;
 		LD_pulse_in_p : IN std_logic_vector(19 downto 0);
 		LD_pulse_in_n : IN std_logic_vector(19 downto 0);
+		----delay chip NB6L295-D
+		Dac_en	   : out  STD_LOGIC; --DAC chip enable
+		Dac_Sclk   : out  STD_LOGIC; --DAC chip clock
+		Dac_Csn    : out  STD_LOGIC; --DAC chip select
+		Dac_Din    : out  STD_LOGIC; --DAC data input
 		cpldif_kz_vrf_addr : IN std_logic_vector(7 downto 0);
 		cpldif_kz_vrf_wr_en : IN std_logic;
 		cpldif_kz_vrf_rd_en : IN std_logic;
@@ -350,8 +362,8 @@ architecture Behavioral of ground_pro_top is
 --	signal clk_40M_p : std_logic;
 --	signal clk_40M_n : std_logic;
 	signal sys_clk_80M : std_logic;
-	signal sys_clk_60M : std_logic;
-	signal sys_clk_200M : std_logic;
+	signal sys_clk_320M : std_logic;
+--	signal sys_clk_dcm : std_logic;
 	signal sys_clk_160M : std_logic;
 	signal sys_clk_160M_inv : std_logic;
 	signal sys_clk_dcm : std_logic;
@@ -494,10 +506,10 @@ begin
 		reset_in_n => reset_in_n,
 		sys_clk_80M => sys_clk_80M,
 		sys_clk_60M => open,
-		sys_clk_200M => sys_clk_200M,
+		sys_clk_dcm => sys_clk_dcm,
 		sys_clk_160M => sys_clk_160M,
 		sys_clk_160M_inv => sys_clk_160M_inv,
-		sys_clk_dcm => sys_clk_dcm,
+		sys_clk_320m => sys_clk_320m,
 		sys_rst_n => sys_rst_n,
 		cpldif_crg_addr => cpldif_addr,
 		cpldif_crg_wr_en => cpldif_wr_en,
@@ -555,8 +567,9 @@ begin
 end process;
 
 Inst_KZ_verify_top: KZ_verify_top PORT MAP(
-		sys_clk_200M => sys_clk_200M,
+		sys_clk_dcm => sys_clk_dcm,
 		sys_clk_80M => sys_clk_80M,
+		sys_clk_320M => sys_clk_320M,
 		sys_rst_n => sys_rst_n,
 		tdc_cpldif_fifo_clr => tdc_cpldif_fifo_clr,
 		LD_pulse_in_p => LD_pulse_in_p,
@@ -567,6 +580,10 @@ Inst_KZ_verify_top: KZ_verify_top PORT MAP(
 		cpldif_kz_vrf_wr_data => cpldif_wr_data,
 		kz_vrf_cpldif_rd_data => kz_vrf_cpldif_rd_data,
 		iodelay_ctrl_rdy => open,
+		Dac_en => Dac_en,
+		Dac_Sclk => Dac_Sclk,
+		Dac_Csn => Dac_Csn,
+		Dac_Din => Dac_Din,
 		compare_total_cnt_1 => compare_total_cnt_1,
 		compare_total_cnt_2 => compare_total_cnt_2,
 		compare_error_cnt_1 => compare_error_cnt_1,
