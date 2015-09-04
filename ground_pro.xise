@@ -83,14 +83,6 @@
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="233"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="233"/>
     </file>
-    <file xil_pn:name="ipcore_dir/CLK_DCM.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="10"/>
-    </file>
-    <file xil_pn:name="ipcore_dir/TDC_CPLD_FIFO.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="5"/>
-    </file>
     <file xil_pn:name="code/src/LJ/PM_recieve_TB.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="PostMapSimulation" xil_pn:seqID="114"/>
@@ -115,25 +107,13 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="15"/>
     </file>
-    <file xil_pn:name="ipcore_dir/kz_fifo.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="2"/>
-    </file>
     <file xil_pn:name="code/src/LJ/data_compare_unit.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="16"/>
     </file>
-    <file xil_pn:name="ipcore_dir/kz_ram.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="1"/>
-    </file>
     <file xil_pn:name="code/src/LJ/kz_reg_resolve.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="13"/>
-    </file>
-    <file xil_pn:name="ipcore_dir/merge_fifo.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="7"/>
     </file>
     <file xil_pn:name="code/src/sq/Frame_pack.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
@@ -143,21 +123,9 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="4"/>
     </file>
-    <file xil_pn:name="ipcore_dir/frame_sdram_fifo.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="3"/>
-    </file>
     <file xil_pn:name="code/src/LJ/frame_buf.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="21"/>
-    </file>
-    <file xil_pn:name="ipcore_dir/dps_data_mux_fifo.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="9"/>
-    </file>
-    <file xil_pn:name="ipcore_dir/sdram_cpldif_fifo.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="6"/>
     </file>
     <file xil_pn:name="code/src/LJ/KZ_verify_TB.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
@@ -165,46 +133,51 @@
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="226"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="226"/>
     </file>
-    <file xil_pn:name="ipcore_dir/kz_dcm.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="8"/>
-    </file>
-    <file xil_pn:name="NBL295_CTRL_TB.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="2"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="156"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="156"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="156"/>
-    </file>
     <file xil_pn:name="code/src/LJ/NB6L295_CTRL.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="12"/>
     </file>
-    <file xil_pn:name="ipcore_dir/CLK_DCM.xise" xil_pn:type="FILE_COREGENISE">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    <file xil_pn:name="code/tb/NB6L295_CTRL_TB.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="46"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="46"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="46"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="46"/>
     </file>
-    <file xil_pn:name="ipcore_dir/TDC_CPLD_FIFO.xise" xil_pn:type="FILE_COREGENISE">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    <file xil_pn:name="ipcore_dir/kz_dcm.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="65"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="8"/>
     </file>
-    <file xil_pn:name="ipcore_dir/kz_fifo.xise" xil_pn:type="FILE_COREGENISE">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    <file xil_pn:name="ipcore_dir/kz_fifo.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="66"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="2"/>
     </file>
-    <file xil_pn:name="ipcore_dir/kz_ram.xise" xil_pn:type="FILE_COREGENISE">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    <file xil_pn:name="ipcore_dir/kz_ram.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="67"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="1"/>
     </file>
-    <file xil_pn:name="ipcore_dir/merge_fifo.xise" xil_pn:type="FILE_COREGENISE">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    <file xil_pn:name="ipcore_dir/merge_fifo.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="68"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="7"/>
     </file>
-    <file xil_pn:name="ipcore_dir/frame_sdram_fifo.xise" xil_pn:type="FILE_COREGENISE">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    <file xil_pn:name="ipcore_dir/TDC_CPLD_FIFO.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="69"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="5"/>
     </file>
-    <file xil_pn:name="ipcore_dir/dps_data_mux_fifo.xise" xil_pn:type="FILE_COREGENISE">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    <file xil_pn:name="ipcore_dir/CLK_DCM.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="70"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="10"/>
     </file>
-    <file xil_pn:name="ipcore_dir/sdram_cpldif_fifo.xise" xil_pn:type="FILE_COREGENISE">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    <file xil_pn:name="ipcore_dir/dps_data_mux_fifo.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="71"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="9"/>
     </file>
-    <file xil_pn:name="ipcore_dir/kz_dcm.xise" xil_pn:type="FILE_COREGENISE">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    <file xil_pn:name="ipcore_dir/frame_sdram_fifo.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="72"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="3"/>
+    </file>
+    <file xil_pn:name="ipcore_dir/sdram_cpldif_fifo.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="73"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="6"/>
     </file>
   </files>
 
