@@ -9,175 +9,189 @@
     <!-- along with the project source files, is sufficient to open and    -->
     <!-- implement in ISE Project Navigator.                               -->
     <!--                                                                   -->
-    <!-- Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved. -->
+    <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
   </header>
 
-  <version xil_pn:ise_version="13.3" xil_pn:schema_version="2"/>
+  <version xil_pn:ise_version="14.7" xil_pn:schema_version="2"/>
 
   <files>
     <file xil_pn:name="code/src/lzh/cpld_if.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="18"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="17"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="17"/>
     </file>
     <file xil_pn:name="code/tb/cpld_if_test.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="2"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="2"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="2"/>
     </file>
     <file xil_pn:name="code/src/sq/ground_pro_top.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="22"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="21"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="21"/>
     </file>
     <file xil_pn:name="code/src/lzh/count_measure.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="19"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="18"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="18"/>
     </file>
     <file xil_pn:name="code/tb/cpldif_burst_test.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="2"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="5"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="5"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="5"/>
     </file>
     <file xil_pn:name="code/tb/count_measure_TB.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="110"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="6"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="6"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="6"/>
     </file>
     <file xil_pn:name="code/src/lzh/CRG.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="17"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="16"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="16"/>
     </file>
     <file xil_pn:name="code/tb/FramePack_tb.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="177"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="8"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="8"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="8"/>
     </file>
     <file xil_pn:name="code/src/LJ/rdn_gen_stimulate.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="55"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="55"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="55"/>
-    </file>
-    <file xil_pn:name="code/src/LJ/counter.vhd" xil_pn:type="FILE_VHDL"/>
-    <file xil_pn:name="code/src/PXI_TDC_TOP.ucf" xil_pn:type="FILE_UCF">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="9"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="9"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="9"/>
     </file>
     <file xil_pn:name="code/src/LJ/ground_pro_top_tb_lj.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="205"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="205"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="205"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="10"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="10"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="10"/>
     </file>
     <file xil_pn:name="code/src/LJ/poc_output_control_TB.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="260"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="260"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="260"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="11"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="11"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="11"/>
     </file>
     <file xil_pn:name="code/src/LJ/dps_control_TB.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="233"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="233"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="233"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="12"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="12"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="12"/>
     </file>
     <file xil_pn:name="code/src/LJ/PM_recieve_TB.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="114"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="114"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="114"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="13"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="13"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="13"/>
     </file>
     <file xil_pn:name="code/src/LJ/atan_lut_TB.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="248"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="248"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="248"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="14"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="14"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="14"/>
     </file>
     <file xil_pn:name="code/src/LJ/KZ_verify_top.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="20"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="19"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="19"/>
     </file>
     <file xil_pn:name="code/src/LJ/IODELAY_CTRL.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="14"/>
-    </file>
-    <file xil_pn:name="code/src/LJ/data_gen_unit.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="15"/>
-    </file>
-    <file xil_pn:name="code/src/LJ/data_compare_unit.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="16"/>
-    </file>
-    <file xil_pn:name="code/src/LJ/kz_reg_resolve.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="13"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="13"/>
     </file>
+    <file xil_pn:name="code/src/LJ/data_gen_unit.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="14"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="14"/>
+    </file>
+    <file xil_pn:name="code/src/LJ/data_compare_unit.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="15"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="15"/>
+    </file>
+    <file xil_pn:name="code/src/LJ/kz_reg_resolve.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="12"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="12"/>
+    </file>
     <file xil_pn:name="code/src/sq/Frame_pack.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="11"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="10"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="10"/>
     </file>
     <file xil_pn:name="code/src/sq/crc16d16.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="4"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="4"/>
     </file>
     <file xil_pn:name="code/src/LJ/frame_buf.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="21"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="20"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="20"/>
     </file>
     <file xil_pn:name="code/src/LJ/KZ_verify_TB.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="226"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="226"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="226"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="22"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="23"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="23"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="23"/>
     </file>
     <file xil_pn:name="code/src/LJ/NB6L295_CTRL.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="12"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="11"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="11"/>
     </file>
     <file xil_pn:name="code/tb/NB6L295_CTRL_TB.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="46"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="46"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="46"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="46"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="25"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="25"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="25"/>
     </file>
     <file xil_pn:name="ipcore_dir/kz_dcm.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="65"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="8"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
     <file xil_pn:name="ipcore_dir/kz_fifo.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="66"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="2"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="2"/>
     </file>
     <file xil_pn:name="ipcore_dir/kz_ram.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="67"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="1"/>
     </file>
     <file xil_pn:name="ipcore_dir/merge_fifo.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="68"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="7"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
     <file xil_pn:name="ipcore_dir/TDC_CPLD_FIFO.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="69"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="5"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="5"/>
     </file>
     <file xil_pn:name="ipcore_dir/CLK_DCM.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="70"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="10"/>
-    </file>
-    <file xil_pn:name="ipcore_dir/dps_data_mux_fifo.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="71"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="9"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="9"/>
     </file>
+    <file xil_pn:name="ipcore_dir/dps_data_mux_fifo.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="8"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="8"/>
+    </file>
     <file xil_pn:name="ipcore_dir/frame_sdram_fifo.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="72"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="3"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="3"/>
     </file>
     <file xil_pn:name="ipcore_dir/sdram_cpldif_fifo.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="73"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="6"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="6"/>
+    </file>
+    <file xil_pn:name="code/src/LJ/ADC_500M_verify_top.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    </file>
+    <file xil_pn:name="data_gen_out.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    </file>
+    <file xil_pn:name="code/src/PXI_TDC_TOP.ucf" xil_pn:type="FILE_UCF">
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    </file>
+    <file xil_pn:name="ipcore_dir/kz_verify_dcm.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="7"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="7"/>
+    </file>
+    <file xil_pn:name="ipcore_dir/kz_verify_dcm.xise" xil_pn:type="FILE_COREGENISE">
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
   </files>
 
@@ -305,6 +319,7 @@
     <property xil_pn:name="Ignore Pre-Compiled Library Warning Check" xil_pn:value="true" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Ignore User Timing Constraints Map" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Ignore User Timing Constraints Par" xil_pn:value="false" xil_pn:valueState="default"/>
+    <property xil_pn:name="Ignore Version Check" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Implementation Top" xil_pn:value="Architecture|ground_pro_top|Behavioral" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Implementation Top File" xil_pn:value="code/src/sq/ground_pro_top.vhd" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Implementation Top Instance Path" xil_pn:value="/ground_pro_top" xil_pn:valueState="non-default"/>
@@ -424,8 +439,8 @@
     <property xil_pn:name="Run Design Rules Checker (DRC)" xil_pn:value="true" xil_pn:valueState="default"/>
     <property xil_pn:name="Safe Implementation" xil_pn:value="No" xil_pn:valueState="default"/>
     <property xil_pn:name="Security" xil_pn:value="Enable Readback and Reconfiguration" xil_pn:valueState="default"/>
-    <property xil_pn:name="Selected Module Instance Name" xil_pn:value="/NB6L295_CTRL_TB" xil_pn:valueState="non-default"/>
-    <property xil_pn:name="Selected Simulation Root Source Node Behavioral" xil_pn:value="work.NB6L295_CTRL_TB" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Selected Module Instance Name" xil_pn:value="/KZ_verify_TB/uut/Inst_KZ_verify_top/Inst_data_compare_unit_1" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Selected Simulation Root Source Node Behavioral" xil_pn:value="work.data_compare_unit" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Selected Simulation Root Source Node Post-Map" xil_pn:value="work.cpldif_burst_test" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Selected Simulation Root Source Node Post-Route" xil_pn:value="work.ground_pro_top_tb" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Selected Simulation Root Source Node Post-Translate" xil_pn:value="work.ground_pro_top_tb" xil_pn:valueState="non-default"/>
@@ -448,6 +463,7 @@
     <property xil_pn:name="Structure window" xil_pn:value="true" xil_pn:valueState="default"/>
     <property xil_pn:name="Synthesis Tool" xil_pn:value="XST (VHDL/Verilog)" xil_pn:valueState="default"/>
     <property xil_pn:name="Target Simulator" xil_pn:value="Modelsim-SE Mixed" xil_pn:valueState="default"/>
+    <property xil_pn:name="Target UCF File Name" xil_pn:value="code/src/LJ/ADC_100M_Verify_top.ucf" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Timing Mode Map" xil_pn:value="Performance Evaluation" xil_pn:valueState="default"/>
     <property xil_pn:name="Timing Mode Par" xil_pn:value="Performance Evaluation" xil_pn:valueState="default"/>
     <property xil_pn:name="Top-Level Module Name in Output Netlist" xil_pn:value="" xil_pn:valueState="default"/>
@@ -489,7 +505,7 @@
     <!--                                                                                  -->
     <!-- The following properties are for internal use only. These should not be modified.-->
     <!--                                                                                  -->
-    <property xil_pn:name="PROP_BehavioralSimTop" xil_pn:value="Architecture|NB6L295_CTRL_TB|behavior" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="PROP_BehavioralSimTop" xil_pn:value="Architecture|KZ_verify_TB|behavior" xil_pn:valueState="non-default"/>
     <property xil_pn:name="PROP_DesignName" xil_pn:value="ground_pro" xil_pn:valueState="non-default"/>
     <property xil_pn:name="PROP_DevFamilyPMName" xil_pn:value="virtex6" xil_pn:valueState="default"/>
     <property xil_pn:name="PROP_FPGAConfiguration" xil_pn:value="FPGAConfiguration" xil_pn:valueState="default"/>

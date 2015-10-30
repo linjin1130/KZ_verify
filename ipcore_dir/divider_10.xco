@@ -1,7 +1,7 @@
 ##############################################################
 #
-# Xilinx Core Generator version 13.3
-# Date: Sun Dec 21 11:56:32 2014
+# Xilinx Core Generator version 14.7
+# Date: Sun Oct 25 13:58:04 2015
 #
 ##############################################################
 #
@@ -54,5 +54,8 @@ CSET remainder_type=Fractional
 CSET sclr=false
 CSET sclr_ce_priority=SCLR_overrides_CE
 # END Parameters
+# BEGIN Extra information
+MISC pkg_timestamp=2013-10-13T18:46:09Z
+# END Extra information
 GENERATE
-# CRC: f283c7e8
+# CRC: a48f6433

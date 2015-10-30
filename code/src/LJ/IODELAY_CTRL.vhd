@@ -37,14 +37,18 @@ use UNISIM.vcomponents.all;
 
 entity IODELAY_CTRL is
 generic(
-   IODELAY_GRP             : string  := "IODELAY_MIG" -- May be assigned unique name 
+   SIGNAL_PATTERN        : string  := "DATA";-- "DATA" or "CLOCK" input signal
+   DELAY_SRC             : string  := "I"; --O Data input for IODELAYE1 from the OSERDES/OLOGIC
+	-- Delay input ("I", "CLKIN", "DATAIN", "IO", "O")
+   IODELAY_GRP           : string  := "IODELAY_MIG" -- May be assigned unique name 
                                                        -- when mult IP cores in design
   );
 port(
 --	sys_clk_200M 	: in std_logic;
 	control_clk 	: in std_logic;
 
---	sys_rst_n 		: in std_logic;
+	sys_rst_h 		: in std_logic;
+	REFCLK 		: in std_logic;
 	
 	delay_in 	: in std_logic;
 	delay_load	: in std_logic;
@@ -62,6 +66,7 @@ architecture Behavioral of IODELAY_CTRL is
   attribute IODELAY_GROUP of IODELAYE1_inst_1 : label is IODELAY_GRP;
   
 	signal rst_in : std_logic;
+	signal iodelay_ctrl_rdy : std_logic;
 --	signal RDY : std_logic;
 --	signal DATAOUT : std_logic;
 --	signal DATAOUT_and : std_logic;
@@ -69,26 +74,26 @@ architecture Behavioral of IODELAY_CTRL is
 begin
 --rst_in	<= not sys_rst_n;
 ------------------------------------------------------------
-------apply IO delay 1
+------apply IO delay 1 
 ------------------------------------------------------------
 IODELAYE1_inst_1 : IODELAYE1
 generic map (
 	CINVCTRL_SEL => FALSE,
 	-- Enable dynamic clock inversion ("TRUE"/"FALSE")
-	DELAY_SRC => "I",--O Data input for IODELAYE1 from the OSERDES/OLOGIC
+	DELAY_SRC => DELAY_SRC,--O Data input for IODELAYE1 from the OSERDES/OLOGIC
 	-- Delay input ("I", "CLKIN", "DATAIN", "IO", "O")
 	HIGH_PERFORMANCE_MODE => TRUE, -- Reduced jitter ("TRUE"), Reduced power ("FALSE")
---	IDELAY_TYPE => "VAR_LOADABLE",
+	IDELAY_TYPE => "VAR_LOADABLE",
 	-- "DEFAULT", "FIXED", "VARIABLE", or "VAR_LOADABLE"
 	--IDELAY_VALUE => 3,
 	-- Input delay tap setting (0-32)
-	ODELAY_TYPE => "VAR_LOADABLE",
+	--ODELAY_TYPE => "VAR_LOADABLE",
 	-- "FIXED", "VARIABLE", or "VAR_LOADABLE"
 	--ODELAY_VALUE => 0,
 	-- Output delay tap setting (0-32)
 	REFCLK_FREQUENCY => 200.0,
 	-- IDELAYCTRL clock input frequency in MHz
-	SIGNAL_PATTERN => "DATA"
+	SIGNAL_PATTERN => SIGNAL_PATTERN
 	-- "DATA" or "CLOCK" input signal
 )
 port map (

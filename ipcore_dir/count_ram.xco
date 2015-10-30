@@ -1,7 +1,7 @@
 ##############################################################
 #
-# Xilinx Core Generator version 13.3
-# Date: Mon Aug 19 01:34:10 2013
+# Xilinx Core Generator version 14.7
+# Date: Sun Oct 25 13:56:32 2015
 #
 ##############################################################
 #
@@ -67,7 +67,7 @@ CSET sync_reset_qsdpo=false
 CSET sync_reset_qspo=false
 # END Parameters
 # BEGIN Extra information
-MISC pkg_timestamp=2011-03-10T04:53:19.000Z
+MISC pkg_timestamp=2011-03-10T04:53:19Z
 # END Extra information
 GENERATE
-# CRC: 8d3ea59b
+# CRC: 454b5f0c

@@ -89,7 +89,6 @@ NET "clk_40M_IB" LOC = H9;
 #NET "Tp[7]" LOC = N30;
 ##TP31
 #NET "Tp[8]" LOC = T33;
-
 #Created by Constraints Editor (xc6vlx240t-ff1156-2) - 2012/12/25
 NET "clk_40M_I" TNM_NET = "clk_40M_I";
 TIMESPEC TS_clk_40M_I = PERIOD "clk_40M_I" 6.25 ns HIGH 50 %;
@@ -107,7 +106,6 @@ NET "cpld_fpga_clk" CLOCK_DEDICATED_ROUTE = FALSE;
 #NET "Rnd_Gen_WNG_Data[1]" LOC = R34;
 #NET "Rnd_Gen_WNG_Data[2]" LOC = T33;
 #NET "Rnd_Gen_WNG_Data[3]" LOC = T34;
-
 ################ monitor interface ################
 #INST "Inst_sysmonitor/sysmonitor_core_inst/SYSMON_INST" LOC = SYSMON_X0Y0;
 ## 12V_V
@@ -157,7 +155,6 @@ NET "cpld_fpga_clk" CLOCK_DEDICATED_ROUTE = FALSE;
 #
 #NET "vn_in" LOC = V17;
 #NET "vp_in" LOC = U18;
-
 ############ FPGA CPLD interface ##############
 #Created by Constraints Editor (xc6vlx240t-ff1156-2) - 2013/09/18
 NET "cpld_fpga_clk" TNM_NET = "cpld_fpga_clk";
@@ -235,7 +232,6 @@ NET "cpld_fpga_data[31]" LOC = AL10;
 #
 #NET "syn_light" LOC = V28;    ### J15 2
 #NET "chopper_ctrl" LOC = V27; ### J15 1
-
 ######
 #NET "SERIAL_OUT_p[0]" LOC = U33;### J23  alice PM pecl
 #NET "SERIAL_OUT_n[0]" LOC = U32;### J24  alice PM necl
@@ -243,10 +239,8 @@ NET "cpld_fpga_data[31]" LOC = AL10;
 #NET "SERIAL_OUT_n[1]" LOC = V29;### J26  alice AM necl
 #NET "SERIAL_OUT_p[2]" LOC = U31;### J27  alice 500M clk
 #NET "SERIAL_OUT_n[2]" LOC = U30;### J28  alice 500M clk
-
 #NET "PPG_clock" LOC = U31;
 #NET "PPG_start" LOC = U30;
-
 ##NET "apd_fpga_hit_p[0]" LOC = C28;#QLD3_LVDS1+ J9 1
 ##NET "apd_fpga_hit_n[0]" LOC = B28;#QLD3_LVDS1- J9 2
 ##NET "apd_fpga_hit_p[1]" LOC = C29;#QLD3_LVDS2+ J9 3
@@ -300,9 +294,7 @@ NET "cpld_fpga_data[31]" LOC = AL10;
 #NET "apd_fpga_hit_n[2]" LOC = G33;#QLD4_LVDS1- J9 6
 #NET "apd_fpga_hit_p[3]" LOC = J25;#QLD4_LVDS2+ J9 7
 #NET "apd_fpga_hit_n[3]" LOC = J24;#QLD4_LVDS2- J9 8
-
 ############ end of Bob ###########
-
 #NET "GPS_pulse_in" CLOCK_DEDICATED_ROUTE = FALSE;
 #NET "syn_light_ext" CLOCK_DEDICATED_ROUTE = FALSE;
 ##NET "apd_fpga_hit_n[0]" CLOCK_DEDICATED_ROUTE = FALSE;
@@ -311,7 +303,6 @@ NET "cpld_fpga_data[31]" LOC = AL10;
 #NET "apd_fpga_hit_n[2]" CLOCK_DEDICATED_ROUTE = FALSE;
 #NET "apd_fpga_hit_p[3]" CLOCK_DEDICATED_ROUTE = FALSE;
 #NET "apd_fpga_hit_n[3]" CLOCK_DEDICATED_ROUTE = FALSE;
-
 #INST "Inst_multichnlTDC/hitin_bufg_inst[8].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
 #INST "Inst_multichnlTDC/hitin_bufg_inst[9].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
 #INST "Inst_multichnlTDC/hitin_bufg_inst[14].BUFG_inst" LOC = BUFGCTRL_X0Y16:BUFGCTRL_X0Y31;
@@ -323,9 +314,7 @@ NET "cpld_fpga_data[31]" LOC = AL10;
 #INST "Inst_multichnlTDC/hitin_bufg_inst[11].BUFG_inst" LOC = BUFGCTRL_X0Y0:BUFGCTRL_X0Y15;
 #INST "Inst_multichnlTDC/hitin_bufg_inst[12].BUFG_inst" LOC = BUFGCTRL_X0Y0:BUFGCTRL_X0Y15;
 #INST "Inst_multichnlTDC/hitin_bufg_inst[13].BUFG_inst" LOC = BUFGCTRL_X0Y0:BUFGCTRL_X0Y15;
-
 ##Clock region 1:SLICE_X0->SLICE_X83
-
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[1].FDCE_inst" LOC = SLICE_X20Y180;
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[2].FDCE_inst" LOC = SLICE_X24Y180;
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[3].FDCE_inst" LOC = SLICE_X28Y180;
@@ -334,7 +323,6 @@ NET "cpld_fpga_data[31]" LOC = AL10;
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[6].FDCE_inst" LOC = SLICE_X40Y180;
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[7].FDCE_inst" LOC = SLICE_X44Y180;
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[8].FDCE_inst" LOC = SLICE_X48Y180;
-
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[9].FDCE_inst" LOC = SLICE_X86Y180;
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[10].FDCE_inst" LOC = SLICE_X90Y180;
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[11].FDCE_inst" LOC = SLICE_X94Y180;
@@ -343,7 +331,6 @@ NET "cpld_fpga_data[31]" LOC = AL10;
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[14].FDCE_inst" LOC = SLICE_X106Y180;
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[15].FDCE_inst" LOC = SLICE_X110Y180;
 #INST "Inst_multichnlTDC/tdc_count_hit_inst[16].FDCE_inst" LOC = SLICE_X114Y180;
-
 #INST "*Chnl_1_inst*carrychain_plain_inst/*" LOC=SLICE_X19Y*;
 #INST "*Chnl_1_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X19Y0;
 #INST "Inst_multichnlTDC/Chnl_1_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X19Y0;
@@ -387,7 +374,6 @@ NET "cpld_fpga_data[31]" LOC = AL10;
 #INST "Inst_multichnlTDC/Chnl_8_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X47Y0;
 #INST "Inst_multichnlTDC/Chnl_8_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X47Y0;
 #INST "Inst_multichnlTDC/Chnl_8_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X47Y0;
-
 #INST "*Chnl_9_inst*carrychain_plain_inst/*" LOC=SLICE_X85Y*;
 #INST "*Chnl_9_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X85Y0;
 #INST "Inst_multichnlTDC/Chnl_9_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X85Y0;
@@ -403,7 +389,6 @@ NET "cpld_fpga_data[31]" LOC = AL10;
 #INST "Inst_multichnlTDC/Chnl_11_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_2" LOC = SLICE_X93Y0;
 #INST "Inst_multichnlTDC/Chnl_11_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X93Y0;
 #INST "Inst_multichnlTDC/Chnl_11_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X93Y0;
-
 #INST "*Chnl_12_inst*carrychain_plain_inst/*" LOC=SLICE_X63Y*;
 #INST "*Chnl_12_inst*carrychain_plain_inst/carrycell_min_first_inst/*" LOC=SLICE_X63Y0;
 #INST "*Chnl_13_inst*carrychain_plain_inst/*" LOC=SLICE_X67Y*;
@@ -440,8 +425,6 @@ NET "cpld_fpga_data[31]" LOC = AL10;
 #INST "Inst_multichnlTDC/Chnl_16_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/FDCPE_inst_1" LOC = SLICE_X113Y0;
 #INST "Inst_multichnlTDC/Chnl_16_inst/carrychain_whole_inst/carrychain_plain_inst/carrycell_min_first_inst/CARRY4_inst_1" LOC = SLICE_X113Y0;
 ###################
-
-
 #NET "send_en_am_p" IOSTANDARD = LVPECL_25;
 #NET "send_en_am_n" IOSTANDARD = LVPECL_25;
 ##NET "ext_clk_I" IOSTANDARD = LVPECL_25;
@@ -463,58 +446,186 @@ NET "cpld_fpga_data[31]" LOC = AL10;
 #NET "Tp[6]" IOSTANDARD = LVCMOS25;
 #NET "Tp[7]" IOSTANDARD = LVCMOS25;
 #NET "Tp[8]" IOSTANDARD = LVCMOS25;
-		
 ############### KZ veify logic ################################
-NET "LD_pulse_in_p[0]" LOC = C28 | IOSTANDARD = LVDS_25;#QLD3_LVDS1+ J9 1
-NET "LD_pulse_in_n[0]" LOC = B28 | IOSTANDARD = LVDS_25;#QLD3_LVDS1- J9 2
-NET "LD_pulse_in_p[1]" LOC = C29 | IOSTANDARD = LVDS_25;#QLD3_LVDS2+ J9 3
-NET "LD_pulse_in_n[1]" LOC = D29 | IOSTANDARD = LVDS_25;#QLD3_LVDS2- J9 4
-NET "LD_pulse_in_p[2]" LOC = F33 | IOSTANDARD = LVDS_25;#QLD4_LVDS1+ J9 5
-NET "LD_pulse_in_n[2]" LOC = G33 | IOSTANDARD = LVDS_25;#QLD4_LVDS1- J9 6
-NET "LD_pulse_in_p[3]" LOC = J25 | IOSTANDARD = LVDS_25;#QLD4_LVDS2+ J9 7
-NET "LD_pulse_in_n[3]" LOC = J24 | IOSTANDARD = LVDS_25;#QLD4_LVDS2- J9 8
+NET "LD_pulse_in_p[4]" LOC = C28 |IOSTANDARD = LVDS_25;#QLD3_LVDS1+ J9 1
+NET "LD_pulse_in_n[4]" LOC = B28 |IOSTANDARD = LVDS_25;#QLD3_LVDS1- J9 2
+NET "LD_pulse_in_p[5]" LOC = C29 |IOSTANDARD = LVDS_25;#QLD3_LVDS2+ J9 3
+NET "LD_pulse_in_n[5]" LOC = D29 |IOSTANDARD = LVDS_25;#QLD3_LVDS2- J9 4
+NET "LD_pulse_in_p[6]" LOC = F33 |IOSTANDARD = LVDS_25;#QLD4_LVDS1+ J9 5
+NET "LD_pulse_in_n[6]" LOC = G33 |IOSTANDARD = LVDS_25;#QLD4_LVDS1- J9 6
+NET "LD_pulse_in_p[7]" LOC = J25 |IOSTANDARD = LVDS_25;#QLD4_LVDS2+ J9 7
+NET "LD_pulse_in_n[7]" LOC = J24 |IOSTANDARD = LVDS_25;#QLD4_LVDS2- J9 8
 ######### 1 #########
-NET "LD_pulse_in_p[4]"		LOC = L15 | IOSTANDARD = LVDS_25;### J8 1
-NET "LD_pulse_in_n[4]"		LOC = L14 | IOSTANDARD = LVDS_25;### J8 2
-NET "LD_pulse_in_p[5]"		LOC = K16 | IOSTANDARD = LVDS_25;### J8 3
-NET "LD_pulse_in_n[5]"		LOC = L16 | IOSTANDARD = LVDS_25;### J8 4
-NET "LD_pulse_in_p[6]"		LOC = B20 | IOSTANDARD = LVDS_25;### J8 5
-NET "LD_pulse_in_n[6]"		LOC = C19 | IOSTANDARD = LVDS_25;### J8 6
-NET "LD_pulse_in_p[7]"		LOC = F21 | IOSTANDARD = LVDS_25;### J8 7
-NET "LD_pulse_in_n[7]"		LOC = G20 | IOSTANDARD = LVDS_25;### J8 8
+NET "LD_pulse_in_p[0]"		LOC = L15 |IOSTANDARD = LVDS_25;### J8 1
+NET "LD_pulse_in_n[0]"		LOC = L14 |IOSTANDARD = LVDS_25;### J8 2
+NET "LD_pulse_in_p[1]"		LOC = K16 |IOSTANDARD = LVDS_25;### J8 3
+NET "LD_pulse_in_n[1]"		LOC = L16 |IOSTANDARD = LVDS_25;### J8 4
+NET "LD_pulse_in_p[2]"		LOC = B20 |IOSTANDARD = LVDS_25;### J8 5
+NET "LD_pulse_in_n[3]"		LOC = C19 |IOSTANDARD = LVDS_25;### J8 6
+NET "LD_pulse_in_p[3]"		LOC = F21 |IOSTANDARD = LVDS_25;### J8 7
+NET "LD_pulse_in_n[3]"		LOC = G20 |IOSTANDARD = LVDS_25;### J8 8
 ######### 2 #########
-NET "LD_pulse_in_p[8]"		LOC = N33 | IOSTANDARD = LVDS_25;### J10 1
-NET "LD_pulse_in_n[8]"		LOC = M33 | IOSTANDARD = LVDS_25;### J10 2
-NET "LD_pulse_in_p[9]"		LOC = K26 | IOSTANDARD = LVDS_25;### J10 3
-NET "LD_pulse_in_n[9]"		LOC = K27 | IOSTANDARD = LVDS_25;### J10 4
-NET "LD_pulse_in_p[10]"		LOC = V34 | IOSTANDARD = LVDS_25;### J10 5
-NET "LD_pulse_in_n[10]"		LOC = W34 | IOSTANDARD = LVDS_25;### J10 6
-NET "LD_pulse_in_p[11]" 	LOC = N28 | IOSTANDARD = LVDS_25;### J10 7
-NET "LD_pulse_in_n[11]" 	LOC = N29 | IOSTANDARD = LVDS_25;### J10 8
+NET "LD_pulse_in_p[8]"		LOC = N33 |IOSTANDARD = LVDS_25;### J10 1
+NET "LD_pulse_in_n[8]"		LOC = M33 |IOSTANDARD = LVDS_25;### J10 2
+NET "LD_pulse_in_p[9]"		LOC = K26 |IOSTANDARD = LVDS_25;### J10 3
+NET "LD_pulse_in_n[9]"		LOC = K27 |IOSTANDARD = LVDS_25;### J10 4
+NET "LD_pulse_in_p[10]"		LOC = V34 |IOSTANDARD = LVDS_25;### J10 5
+NET "LD_pulse_in_n[10]"		LOC = W34 |IOSTANDARD = LVDS_25;### J10 6
+NET "LD_pulse_in_p[11]" 	LOC = N28 |IOSTANDARD = LVDS_25;### J10 7
+NET "LD_pulse_in_n[11]" 	LOC = N29 |IOSTANDARD = LVDS_25;### J10 8
 ######### 3 #########
-NET "LD_pulse_in_p[12]"		LOC = L23 | IOSTANDARD = LVDS_25;### J11 1
-NET "LD_pulse_in_n[12]"		LOC = M22 | IOSTANDARD = LVDS_25;### J11 2
-NET "LD_pulse_in_p[13]"		LOC = L13 | IOSTANDARD = LVDS_25;### J11 3
-NET "LD_pulse_in_n[13]"		LOC = M13 | IOSTANDARD = LVDS_25;### J11 4
-NET "LD_pulse_in_p[14]"		LOC = M12 | IOSTANDARD = LVDS_25;### J11 5
-NET "LD_pulse_in_n[14]"		LOC = M11 | IOSTANDARD = LVDS_25;### J11 6
-NET "LD_pulse_in_p[15]" 	LOC = U23 | IOSTANDARD = LVDS_25;### J11 7
-NET "LD_pulse_in_n[15]" 	LOC = V23 | IOSTANDARD = LVDS_25;### J11 8
+NET "LD_pulse_in_p[12]"		LOC = L23 |IOSTANDARD = LVDS_25;### J11 1
+NET "LD_pulse_in_n[12]"		LOC = M22 |IOSTANDARD = LVDS_25;### J11 2
+NET "LD_pulse_in_p[13]"		LOC = L13 |IOSTANDARD = LVDS_25;### J11 3
+NET "LD_pulse_in_n[13]"		LOC = M13 |IOSTANDARD = LVDS_25;### J11 4
+NET "LD_pulse_in_p[14]"		LOC = M12 |IOSTANDARD = LVDS_25;### J11 5
+NET "LD_pulse_in_n[14]"		LOC = M11 |IOSTANDARD = LVDS_25;### J11 6
+NET "LD_pulse_in_p[15]" 	LOC = U23 |IOSTANDARD = LVDS_25;### J11 7
+NET "LD_pulse_in_n[15]" 	LOC = V23 |IOSTANDARD = LVDS_25;### J11 8
 ######### 3 #########
-NET "LD_pulse_in_p[16]"		LOC = H28 | IOSTANDARD = LVPECL_25;### J8 9
-NET "LD_pulse_in_n[16]"		LOC = H29 | IOSTANDARD = LVPECL_25;### J8 10
-
-NET "LD_pulse_in_p[17]" 	LOC = B31 | IOSTANDARD = LVPECL_25;	### J9 9
-NET "LD_pulse_in_n[17]" 	LOC = A31 | IOSTANDARD = LVPECL_25; ### J9 10
-
-NET "LD_pulse_in_p[18]" 	LOC = V30 | IOSTANDARD = LVPECL_25;	### J10 9
-NET "LD_pulse_in_n[18]"   	LOC = W30 | IOSTANDARD = LVPECL_25;	### J10 10
+NET "LD_pulse_in_p[16]"		LOC = H28 |IOSTANDARD = LVPECL_25;### J8 9
+NET "LD_pulse_in_n[16]"		LOC = H29 |IOSTANDARD = LVPECL_25;### J8 10
+NET "LD_pulse_in_p[17]" 	LOC = B31 |IOSTANDARD = LVPECL_25;	### J9 9
+NET "LD_pulse_in_n[17]" 	LOC = A31 |IOSTANDARD = LVPECL_25; ### J9 10
+NET "LD_pulse_in_p[18]" 	LOC = V30 |IOSTANDARD = LVPECL_25;	### J10 9
+NET "LD_pulse_in_n[18]"   	LOC = W30 |IOSTANDARD = LVPECL_25;	### J10 10
 NET "LD_pulse_in_p[18]" CLOCK_DEDICATED_ROUTE = FALSE;
 ##NET "apd_fpga_hit_n[1]" CLOCK_DEDICATED_ROUTE = FALSE;
 #NET "apd_fpga_hit_p[2]" CLOCK_DEDICATED_ROUTE = FALSE;
 #NET "apd_fpga_hit_n[2]" CLOCK_DEDICATED_ROUTE = FALSE;
-
-NET "LD_pulse_in_p[19]" 	LOC = A10 | IOSTANDARD = LVPECL_25;	### J11 9
-NET "LD_pulse_in_n[19]"   	LOC = B10 | IOSTANDARD = LVPECL_25;	### J11 10
+NET "LD_pulse_in_p[19]" 	LOC = A10 |IOSTANDARD = LVPECL_25;	### J11 9
+NET "LD_pulse_in_n[19]"   	LOC = B10 |IOSTANDARD = LVPECL_25;	### J11 10
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_0" IOB =TRUE;
 
 ############### end of KZ veify logic ################################
+#Created by Constraints Editor (xc6vlx240t-ff1156-2) - 2015/10/29
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_1" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_2" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_3" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_4" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_5" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_6" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_7" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_8" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_9" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_10" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_11" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_12" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_13" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_14" IOB = TRUE;
+#INST "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2_15" IOB = TRUE;
+#Created by Constraints Editor (xc6vlx240t-ff1156-2) - 2015/10/29
+NET "Inst_KZ_verify_top/delay_out<0>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<0>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<1>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<1>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<2>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<2>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<3>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<3>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<4>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<4>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<5>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<5>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<6>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<6>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<7>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<7>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<8>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<8>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<9>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<9>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<10>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<10>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<11>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<11>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<12>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<12>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<13>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<13>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<14>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<14>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<15>" MAXDELAY = 2.3 ns;
+NET "Inst_KZ_verify_top/delay_out<15>" MAXSKEW = 100 ps;
+NET "Inst_KZ_verify_top/delay_out<0>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<1>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<2>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<3>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<4>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<5>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<6>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<7>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<8>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<9>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<10>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<11>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<12>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<13>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<14>" MINDELAY = 1.8 ns;
+NET "Inst_KZ_verify_top/delay_out<15>" MINDELAY = 1.8 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<0>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<0>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<1>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<1>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<2>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<2>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<3>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<3>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<4>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<4>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<5>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<5>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<6>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<6>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<7>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<7>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<8>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<8>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<9>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<9>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<10>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<10>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<11>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<11>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<12>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<12>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<13>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<13>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<14>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<14>" MAXSKEW = 100 ps;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<15>" MAXDELAY = 1 ns;
+#NET "Inst_KZ_verify_top/Inst_data_gen_unit_1/kz_data_reg2<15>" MAXSKEW = 100 ps;
+
+TIMESPEC "TSdelay0" = FROM "LD_pulse_in_p<0>" TO FFS 3;
+TIMESPEC "TSdelay1" = FROM "LD_pulse_in_p<1>" TO FFS 3;
+TIMESPEC "TSdelay2" = FROM "LD_pulse_in_p<2>" TO FFS 3;
+TIMESPEC "TSdelay3" = FROM "LD_pulse_in_p<3>" TO FFS 3;
+TIMESPEC "TSdelay4" = FROM "LD_pulse_in_p<4>" TO FFS 3;
+TIMESPEC "TSdelay5" = FROM "LD_pulse_in_p<5>" TO FFS 3;
+TIMESPEC "TSdelay6" = FROM "LD_pulse_in_p<6>" TO FFS 3;
+TIMESPEC "TSdelay7" = FROM "LD_pulse_in_p<7>" TO FFS 3;
+TIMESPEC "TSdelay8" = FROM "LD_pulse_in_p<8>" TO FFS 3;
+TIMESPEC "TSdelay9" = FROM "LD_pulse_in_p<9>" TO FFS 3;
+TIMESPEC "TSdelay10" = FROM "LD_pulse_in_p<10>" TO FFS 3;
+TIMESPEC "TSdelay11" = FROM "LD_pulse_in_p<11>" TO FFS 3;
+TIMESPEC "TSdelay12" = FROM "LD_pulse_in_p<12>" TO FFS 3;
+TIMESPEC "TSdelay13" = FROM "LD_pulse_in_p<13>" TO FFS 3;
+TIMESPEC "TSdelay14" = FROM "LD_pulse_in_p<14>" TO FFS 3;
+TIMESPEC "TSdelay15" = FROM "LD_pulse_in_p<15>" TO FFS 3;
+
+#net "LD_pulse_in_p<0>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<1>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<2>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<3>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<4>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<5>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<6>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<7>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<8>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<9>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<10>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<11>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<12>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<13>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<14>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";
+#net "LD_pulse_in_p<15>" OFFSET = IN 1.5 ns VALID 2 ns BEFORE net         "LD_pulse_in_p<16>" "RISING";

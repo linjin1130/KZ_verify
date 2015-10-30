@@ -9,6 +9,7 @@ use UNISIM.VComponents.all;
 
 entity frame_buf is
 port (
+			fifo_wr_clk	:	in std_logic;-----------80M
 			sys_clk	:	in std_logic;-----------80M
 			sys_rst_n	:	in std_logic;-----------80M
 			fifo_clr	:	in std_logic;-----------80M
@@ -114,7 +115,7 @@ sys_rst <= not sys_rst_n;
   dps_data_mux_fifo_inst : dps_data_mux_fifo-------64bit-->16bit
   PORT MAP (
     rst => fifo_clr,
-    wr_clk => sys_clk,
+    wr_clk => fifo_wr_clk,
     rd_clk => sys_clk,
     din => tdc_fifo_wr_data,
     wr_en => tdc_fifo_wr_en,

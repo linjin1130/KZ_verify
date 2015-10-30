@@ -40,11 +40,11 @@ entity CRG is
 		reset_in_n  : in std_logic;
 		---global out-
 		sys_clk_80M : out	std_logic;
-		sys_clk_dcm : out	std_logic;
-		sys_clk_60M : out	std_logic;
-		sys_clk_320M : out	std_logic;
-		sys_clk_160M : out std_logic;
-		sys_clk_160M_inv : out std_logic;
+		REFCLK		 : out	std_logic;
+--		sys_clk_60M : out	std_logic;
+		sys_clk_200M : out	std_logic;
+		sys_clk_600M : out std_logic;
+--		sys_clk_160M_inv : out std_logic;
 		
 --		sys_clk_80M : out	std_logic;
 --		sys_clk_200M : out	std_logic;
@@ -86,15 +86,44 @@ port
   CLK_OUT1          : out    std_logic;
   CLK_OUT2          : out    std_logic;
   CLK_OUT3          : out    std_logic;
-  CLK_OUT4          : out    std_logic;
-  CLK_OUT5          : out    std_logic;
+--  CLK_OUT4          : out    std_logic;
+--  CLK_OUT5          : out    std_logic;
 --  CLK_OUT6          : out    std_logic;
   -- Status and control signals
   RESET             : in     std_logic
  );
 end component;
 
+component kz_verify_dcm
+port
+ (-- Clock in ports
+  CLK_IN1           : in     std_logic;
+  -- Clock out ports
+  CLK_OUT1          : out    std_logic;
+  CLK_OUT2          : out    std_logic;
+  -- Status and control signals
+  RESET             : in     std_logic;
+  LOCKED            : out    std_logic
+ );
+end component;
+
 begin
+
+-- COMP_TAG_END ------ End COMPONENT Declaration ------------
+-- The following code must appear in the VHDL architecture
+-- body. Substitute your own instance name and net names.
+------------- Begin Cut here for INSTANTIATION Template ----- INST_TAG
+kz_dcm_inst : kz_verify_dcm
+  port map
+   (-- Clock in ports
+    CLK_IN1 => sys_clk,
+    -- Clock out ports
+    CLK_OUT1 => REFCLK,
+    CLK_OUT2 => sys_clk_80M,
+    -- Status and control signals
+    RESET  => '0',
+    LOCKED => open);
+-- INST_TAG_END ------ End INSTANTIATION Template ------------
 
 --***** synchronous release of reset **
 rst_release : process(sys_clk,soft_rst_n,reset_in_n)
@@ -141,18 +170,18 @@ inst_dcm : CLK_DCM
     CLK_IN1 => clk_40M_p,--clk_in
 --    CLK_IN1_N => clk_40M_IB,--clk_in
     -- Clock out ports
-    CLK_OUT1 => sys_clk,
-    CLK_OUT2 => sys_clk_160M,
-    CLK_OUT3 => sys_clk_160M_inv,
-    CLK_OUT4 => sys_clk_dcm,
-    CLK_OUT5 => sys_clk_320M,
+    CLK_OUT1 => sys_clk_600M,
+    CLK_OUT2 => sys_clk_200M,
+    CLK_OUT3 => sys_clk,
+--    CLK_OUT4 => open,
+--    CLK_OUT5 => sys_clk_320M,
 --    CLK_OUT6 => sys_clk_dcm,
 	 
     -- Status and control signals
     RESET  => '0');
 -- INST_TAG_END ------ End INSTANTIATION Template ------------	
-sys_clk_80M <= sys_clk;
-sys_clk_60m <= '0';
+--sys_clk_80M <= sys_clk;
+--sys_clk_60m <= '0';
 --sys_clk_200M <= '0';
 ---**********   register manage  *******
 ---write register

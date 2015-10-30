@@ -233,12 +233,13 @@ architecture Behavioral of ground_pro_top is
 		cpldif_crg_wr_en : IN std_logic;
 		cpldif_crg_wr_data : IN std_logic_vector(31 downto 0);
 		cpldif_crg_rd_en : IN std_logic;          
+		REFCLK : OUT std_logic;
 		sys_clk_80M : OUT std_logic;
-		sys_clk_60M : OUT std_logic;
-		sys_clk_dcm : OUT std_logic;
-		sys_clk_160M : OUT std_logic;
-		sys_clk_160M_inv : OUT std_logic;
-		sys_clk_320m : OUT std_logic;
+		sys_clk_200M : OUT std_logic;
+		sys_clk_600M : OUT std_logic;
+--		sys_clk_160M : OUT std_logic;
+--		sys_clk_160M_inv : OUT std_logic;
+--		sys_clk_200M : OUT std_logic;
 		sys_rst_n : OUT std_logic;
 		crg_cpldif_rd_data : OUT std_logic_vector(31 downto 0)
 		);
@@ -258,6 +259,8 @@ architecture Behavioral of ground_pro_top is
 		qtel_hit : IN std_logic_vector(tdc_chl_num-1 downto 0);
 		apd_fpga_hit_in : IN std_logic_vector(tdc_chl_num-1 downto 0);
 		tdc_count_time_value : IN std_logic_vector(31 downto 0);
+		delay_data_mo		:	in	std_logic_vector(16*5-1 downto 0);
+		compare_total_over	:	IN	std_logic_vector(31 downto 0);
 		compare_total_cnt_1	:	IN	std_logic_vector(31 downto 0);
 		compare_error_cnt_1	:	IN	std_logic_vector(31 downto 0);
 		
@@ -273,9 +276,10 @@ architecture Behavioral of ground_pro_top is
 	
 		COMPONENT KZ_verify_top
 	PORT(
-		sys_clk_dcm : IN std_logic;
+		sys_clk_600M : IN std_logic;
 		sys_clk_80M : IN std_logic;
-		sys_clk_320M : IN std_logic;
+		sys_clk_200M : IN std_logic;
+		REFCLK : IN std_logic;
 		sys_rst_n : IN std_logic;
 		tdc_cpldif_fifo_clr : out std_logic;
 		LD_pulse_in_p : IN std_logic_vector(19 downto 0);
@@ -290,11 +294,13 @@ architecture Behavioral of ground_pro_top is
 		cpldif_kz_vrf_rd_en : IN std_logic;
 		cpldif_kz_vrf_wr_data : IN std_logic_vector(31 downto 0);          
 		kz_vrf_cpldif_rd_data : OUT std_logic_vector(31 downto 0);
-		compare_total_cnt_1	:	out	std_logic_vector(31 downto 0);
-		compare_error_cnt_1	:	out	std_logic_vector(31 downto 0);
+		delay_data_mo		:	out	std_logic_vector(16*5-1 downto 0);
+		compare_total_over	:	out	std_logic_vector(31 downto 0);
+		compare_total_cnt	:	out	std_logic_vector(31 downto 0);
+		compare_error_cnt	:	out	std_logic_vector(31 downto 0);
 		
-		compare_total_cnt_2	:	out	std_logic_vector(31 downto 0);
-		compare_error_cnt_2	:	out	std_logic_vector(31 downto 0);
+--		compare_total_cnt_2	:	out	std_logic_vector(31 downto 0);
+--		compare_error_cnt_2	:	out	std_logic_vector(31 downto 0);
 		iodelay_ctrl_rdy : OUT std_logic;
 		compare_result_wr : OUT std_logic;
 		compare_result : OUT std_logic_vector(63 downto 0)
@@ -304,6 +310,7 @@ architecture Behavioral of ground_pro_top is
 	COMPONENT frame_buf
 	PORT(
 		sys_clk : IN std_logic;
+		fifo_wr_clk : IN std_logic;
 		sys_rst_n : IN std_logic;
 		fifo_clr : IN std_logic;
 		expe_enable : IN std_logic;
@@ -354,19 +361,23 @@ architecture Behavioral of ground_pro_top is
 	signal  qtel_counter_match : std_logic_vector(tdc_chl_num-1 downto 0);
 	--
 	signal kz_vrf_cpldif_rd_data	:	std_logic_vector(31 downto 0);
-	
+
+	signal delay_data_mo	:	std_logic_vector(16*5-1 downto 0);
+	signal compare_total_over	:	std_logic_vector(31 downto 0);
 	signal compare_total_cnt_1	:	std_logic_vector(31 downto 0);
 	signal compare_error_cnt_1	:	std_logic_vector(31 downto 0);
 	signal compare_total_cnt_2	:	std_logic_vector(31 downto 0);
 	signal compare_error_cnt_2	:	std_logic_vector(31 downto 0);
 --	signal clk_40M_p : std_logic;
 --	signal clk_40M_n : std_logic;
+	signal REFCLK : std_logic;
 	signal sys_clk_80M : std_logic;
-	signal sys_clk_320M : std_logic;
+	signal sys_clk_200M : std_logic;
+	signal sys_clk_600M : std_logic;
 --	signal sys_clk_dcm : std_logic;
-	signal sys_clk_160M : std_logic;
-	signal sys_clk_160M_inv : std_logic;
-	signal sys_clk_dcm : std_logic;
+--	signal sys_clk_160M : std_logic;
+--	signal sys_clk_160M_inv : std_logic;
+--	signal sys_clk_dcm : std_logic;
 	signal sys_rst_n : std_logic;
 	signal fpga_cpld_rst_d : std_logic;
 	signal cpldif_burst_len : std_logic_vector(10 downto 0);
@@ -504,12 +515,15 @@ begin
 		clk_40M_I => clk_40M_I,
 		clk_40M_IB => clk_40M_IB,
 		reset_in_n => reset_in_n,
+		REFCLK => REFCLK,
 		sys_clk_80M => sys_clk_80M,
-		sys_clk_60M => open,
-		sys_clk_dcm => sys_clk_dcm,
-		sys_clk_160M => sys_clk_160M,
-		sys_clk_160M_inv => sys_clk_160M_inv,
-		sys_clk_320m => sys_clk_320m,
+		sys_clk_200M => sys_clk_200M,
+		sys_clk_600M => sys_clk_600M,
+--		sys_clk_60M => open,
+--		sys_clk_dcm => sys_clk_dcm,
+--		sys_clk_160M => sys_clk_160M,
+--		sys_clk_160M_inv => sys_clk_160M_inv,
+--		sys_clk_200M => sys_clk_200M,
 		sys_rst_n => sys_rst_n,
 		cpldif_crg_addr => cpldif_addr,
 		cpldif_crg_wr_en => cpldif_wr_en,
@@ -526,13 +540,15 @@ begin
 		tdc_chl_num	=> tdc_chl_num
 	)
 	PORT MAP(
-		sys_clk_80M => sys_clk_160M,
+		sys_clk_80M => sys_clk_80M,
 		sys_rst_n => sys_rst_n,
 		qtel_en => qtel_en,
 --		chopper_ctrl => chopper_ctrl_80M,
 		apd_fpga_hit_in => tdc_count_hit,
 		qtel_hit =>qtel_counter_match,
 		tdc_count_time_value => time_local_cur(31 downto 0),
+		delay_data_mo		  => delay_data_mo,
+		compare_total_over => compare_total_over,
 		compare_total_cnt_1 => compare_total_cnt_1,
 		compare_total_cnt_2 => compare_total_cnt_2,
 		compare_error_cnt_1 => compare_error_cnt_1,
@@ -567,9 +583,10 @@ begin
 end process;
 
 Inst_KZ_verify_top: KZ_verify_top PORT MAP(
-		sys_clk_dcm => sys_clk_dcm,
+		sys_clk_200M => sys_clk_200M,
 		sys_clk_80M => sys_clk_80M,
-		sys_clk_320M => sys_clk_320M,
+		REFCLK => REFCLK,
+		sys_clk_600M => sys_clk_600M,
 		sys_rst_n => sys_rst_n,
 		tdc_cpldif_fifo_clr => tdc_cpldif_fifo_clr,
 		LD_pulse_in_p => LD_pulse_in_p,
@@ -584,10 +601,12 @@ Inst_KZ_verify_top: KZ_verify_top PORT MAP(
 		Dac_Sclk => Dac_Sclk,
 		Dac_Csn => Dac_Csn,
 		Dac_Din => Dac_Din,
-		compare_total_cnt_1 => compare_total_cnt_1,
-		compare_total_cnt_2 => compare_total_cnt_2,
-		compare_error_cnt_1 => compare_error_cnt_1,
-		compare_error_cnt_2 => compare_error_cnt_2,
+		delay_data_mo	=> delay_data_mo,
+		compare_total_over => compare_total_over,
+		compare_total_cnt => compare_total_cnt_1,
+--		compare_total_cnt_2 => compare_total_cnt_2,
+		compare_error_cnt => compare_error_cnt_1,
+--		compare_error_cnt_2 => compare_error_cnt_2,
 		compare_result_wr => compare_result_wr,
 		compare_result => compare_result
 	);
@@ -595,6 +614,7 @@ Inst_KZ_verify_top: KZ_verify_top PORT MAP(
 
 Inst_frame_buf: frame_buf PORT MAP(
 		sys_clk => sys_clk_80M,
+		fifo_wr_clk => sys_clk_200M,
 		sys_rst_n => sys_rst_n,
 		fifo_clr => tdc_cpldif_fifo_clr,
 		expe_enable => '1',

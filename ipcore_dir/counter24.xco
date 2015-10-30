@@ -1,7 +1,7 @@
 ##############################################################
 #
-# Xilinx Core Generator version 13.3
-# Date: Sun Dec 21 08:32:00 2014
+# Xilinx Core Generator version 14.7
+# Date: Sun Oct 25 13:57:03 2015
 #
 ##############################################################
 #
@@ -64,7 +64,7 @@ CSET syncctrlpriority=Reset_Overrides_Set
 CSET threshold_value=1
 # END Parameters
 # BEGIN Extra information
-MISC pkg_timestamp=2011-07-11T11:52:20.000Z
+MISC pkg_timestamp=2013-07-22T10:37:35Z
 # END Extra information
 GENERATE
-# CRC:  c14c170
+# CRC: 9bb999c6

@@ -48,6 +48,9 @@ entity count_measure is
 		---tdc module
 		tdc_count_time_value	:	in	std_logic_vector(31 downto 0);
 		----KZ verify module
+		delay_data_mo		:	in	std_logic_vector(16*5-1 downto 0);
+		
+		compare_total_over	:	IN	std_logic_vector(31 downto 0);
 		compare_total_cnt_1	:	IN	std_logic_vector(31 downto 0);
 		compare_error_cnt_1	:	IN	std_logic_vector(31 downto 0);
 		
@@ -88,20 +91,28 @@ signal latch_fry_cnt_1d : std_logic_vector(9 downto 0);--range 0 to 100s
 signal second_cnt			:	std_logic_vector(27 downto 0);
 signal msecond_cnt		:	std_logic_vector(33 downto 0);
 --for sys_clk160M
---constant one_second 		: std_logic_vector(27 downto 0) := X"4C4B400";--*12.5ns=1s
-constant one_second 		: std_logic_vector(27 downto 0) := X"9896800"; --*6.25=1s
---constant  msecond_100	: std_logic_vector(23 downto 0) := X"7A1200";--*12.5ns=0.1s
-constant  msecond_100	: std_logic_vector(23 downto 0) := X"F42400";  --*6.25=0.1
+constant one_second 		: std_logic_vector(27 downto 0) := X"4C4B400";--*12.5ns=1s
+--constant one_second 		: std_logic_vector(27 downto 0) := X"9896800"; --*6.25=1s
+constant  msecond_100	: std_logic_vector(23 downto 0) := X"7A1200";--*12.5ns=0.1s
+--constant  msecond_100	: std_logic_vector(23 downto 0) := X"F42400";  --*6.25=0.1
 signal cnt_start_en 		: std_logic;--count start enable
 signal cnt_end_en 		: std_logic;--count end enable
 signal count_en 			: std_logic;--apd count enable
 ---
+signal dly_mon_0			: std_logic_vector(31 downto 0);
+signal dly_mon_1			: std_logic_vector(31 downto 0);
+signal dly_mon_2			: std_logic_vector(31 downto 0);
+signal dly_mon_3			: std_logic_vector(31 downto 0);
 signal rd_data_reg 		: std_logic_vector(31 downto 0);
 signal count_state 		: std_logic;
 signal latch_cnt_en 		: std_logic;
 
 begin
 
+dly_mon_0 <= "000"&delay_data_mo(19 downto 15)&"000"&delay_data_mo(14 downto 10)&"000"&delay_data_mo( 9 downto  5)&"000"&delay_data_mo( 4 downto  0);
+dly_mon_1 <= "000"&delay_data_mo(39 downto 35)&"000"&delay_data_mo(34 downto 30)&"000"&delay_data_mo(29 downto 25)&"000"&delay_data_mo(24 downto 20);
+dly_mon_2 <= "000"&delay_data_mo(59 downto 55)&"000"&delay_data_mo(54 downto 50)&"000"&delay_data_mo(49 downto 45)&"000"&delay_data_mo(44 downto 40);
+dly_mon_3 <= "000"&delay_data_mo(79 downto 75)&"000"&delay_data_mo(74 downto 70)&"000"&delay_data_mo(69 downto 65)&"000"&delay_data_mo(64 downto 60);
 
 --****** register manager ***
 lock_addr : process(sys_clk_80M,sys_rst_n)
@@ -169,13 +180,13 @@ begin
 				when X"01"	=>	rd_data_reg	<=	chnl_cnt_reg(1);--read count of channel 1
 				when X"02"	=>	rd_data_reg	<=	chnl_cnt_reg(2);--read count of channel 2
 				when X"03"	=>	rd_data_reg	<=	chnl_cnt_reg(3);--read count of channel 3
-				when X"04"	=>	rd_data_reg	<=	compare_total_cnt_1;--chnl_cnt_reg(4);--read count of channel 4
-				when X"05"	=>	rd_data_reg	<=	compare_error_cnt_1;--chnl_cnt_reg(5);--read count of channel 5
-				when X"06"	=>	rd_data_reg	<=	compare_total_cnt_2;--chnl_cnt_reg(6);--read count of channel 6
-				when X"07"	=>	rd_data_reg	<=	compare_error_cnt_2;--chnl_cnt_reg(7);--read count of channel 7
---				when X"08"	=>	rd_data_reg	<=	chnl_cnt_reg(8);--read count of channel 8
---				when X"09"	=>	rd_data_reg	<=	chnl_cnt_reg(9);--read count of channel 9
---				when X"0A"	=>	rd_data_reg	<=	chnl_cnt_reg(10);--read count of channel 10
+				when X"04"	=>	rd_data_reg	<=	compare_error_cnt_1;--chnl_cnt_reg(4);--read count of channel 4
+				when X"05"	=>	rd_data_reg	<=	compare_total_cnt_1;--chnl_cnt_reg(5);--read count of channel 5
+				when X"06"	=>	rd_data_reg	<=	compare_total_over;--chnl_cnt_reg(6);--read count of channel 6
+				when X"07"	=>	rd_data_reg	<=	dly_mon_0;--chnl_cnt_reg(7);--read count of channel 7
+				when X"08"	=>	rd_data_reg	<=	dly_mon_1;--read count of channel 8
+				when X"09"	=>	rd_data_reg	<=	dly_mon_2;--read count of channel 9
+				when X"0A"	=>	rd_data_reg	<=	dly_mon_3;--read count of channel 10
 --				when X"0B"	=>	rd_data_reg	<=	chnl_cnt_reg(11);--read count of channel 11
 --				when X"0C"	=>	rd_data_reg	<=	chnl_cnt_reg(12);--read count of channel 12
 --				when X"0D"	=>	rd_data_reg	<=	chnl_cnt_reg(13);--read count of channel 13
